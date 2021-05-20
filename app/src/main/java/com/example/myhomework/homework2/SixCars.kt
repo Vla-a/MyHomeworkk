@@ -11,6 +11,7 @@ object SixCars {
         val car4 = Car("pego", "pink", 2.9, "FT-123")
         val car5 = Car("nissan", "red", 2.0, "FT-124" )
         val car6 = Car("tesla", "yellow", 1.4, "FT-125" )
+
         println(car1.getCar())
         println(car2.getCar())
         println(car3.getCar())
