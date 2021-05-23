@@ -15,10 +15,10 @@ class MainActivity : AppCompatActivity() {
         SixCars.createCar()
 
         val bob = Dog("Bob", 43)
-        println("${bob.name} пробежал за ${bob.getTime()}")
+        println("${bob.name} пробежал за ${"%.2f".format(bob.getTime())}")
 
         val rok = Elephant("Pok", 89)
-        println("${rok.name} пробежал за ${rok.getTime()}")
+        println("${rok.name} пробежал за ${"%.2f".format(rok.getTime())}")
 
     }
 }
