@@ -1,17 +1,30 @@
 package com.example.myhomework
 
+import android.content.Intent
 import android.os.Bundle
+import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 import com.example.myhomework.homework4.Boss
 import com.example.myhomework.homework4.Manager
-import com.example.myhomework.homework4.Staff
 import com.example.myhomework.homework4.Worker
 import java.util.*
 
+
 class MainActivity : AppCompatActivity() {
+
+    private lateinit var textView: TextView
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+
+        textView = findViewById(R.id.tv_text)
+        textView.setOnClickListener{
+
+            val intent = Intent(this, HomeWork6Activiti::class.java)
+            startActivity(intent)
+
+        }
 
 //        SixCars.createCar()
 //
@@ -39,7 +52,8 @@ class MainActivity : AppCompatActivity() {
         val manager4 = Manager("Malk", 2027.80, arrayListOf(woker10, woker11, woker12))
         val boss1 = Boss("Boss1", 3055.90,arrayListOf( manager1, manager2))
         val boss2 = Boss("Boss1", 3055.90, arrayListOf( manager2, manager3))
-        val res = arrayListOf(boss1, boss2, manager1, manager2, manager3, manager4,
+        val res = arrayListOf(
+            boss1, boss2, manager1, manager2, manager3, manager4,
             woker1, woker2, woker3, woker4, woker5, woker6, woker7, woker8, woker9,
             woker10, woker11, woker12,
         ).forEach {
