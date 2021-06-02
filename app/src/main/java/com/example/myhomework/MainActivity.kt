@@ -2,6 +2,7 @@ package com.example.myhomework
 
 import android.content.Intent
 import android.os.Bundle
+import android.util.Log
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 import com.example.myhomework.homework4.Boss
@@ -21,10 +22,11 @@ class MainActivity : AppCompatActivity() {
         textView = findViewById(R.id.tv_text)
         textView.setOnClickListener{
 
-            val intent = Intent(this, HomeWork6Activiti::class.java)
+            val intent = Intent(this, HomeWork6Activity::class.java)
             startActivity(intent)
 
         }
+
 
 //        SixCars.createCar()
 //
@@ -124,5 +126,29 @@ class MainActivity : AppCompatActivity() {
                     println("подчененный: ${it.name} ")}} имеет ${it.listWorker.size} подчиненных")
             }
         }
+    }
+    override fun onStart() {
+        super.onStart()
+        Log.e("fff", "onStart ")
+    }
+
+    override fun onResume() {
+        super.onResume()
+
+        Log.e("fff", "onResume")
+    }
+
+    override fun onPause() {
+        super.onPause()
+        Log.e("fff", "onPause")
+    }
+    override fun onStop() {
+        super.onStop()
+        Log.e("fff", "onStop")
+
+        }
+    override fun onDestroy() {
+        super.onDestroy()
+        Log.e("fff", "onDestroy")
     }
 }
