@@ -11,10 +11,13 @@
         android:orientation="vertical"
         android:background="@color/my">
 
+
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:orientation="vertical">
+            android:orientation="vertical"
+            android:padding="2dp"
+            android:background="@color/black">
             <View
                 android:layout_width="match_parent"
                 android:layout_height="100dp"
@@ -31,10 +34,13 @@
             android:background="@color/yellow"
             android:layout_weight="1"/>
     </LinearLayout>
+
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:layout_marginTop="100dp">
+            android:layout_marginTop="100dp"
+            android:padding="2dp"
+            android:background="@color/black">
 
              <View
                 android:layout_width="100dp"
@@ -56,11 +62,10 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:orientation="vertical"
-            android:layout_marginTop="100dp">
-             <View
-                 android:layout_width="match_parent"
-                 android:layout_height="1dp"
-                 android:background="@color/black" />
+            android:layout_marginTop="100dp"
+            android:padding="2dp"
+            android:background="@color/black">
+
             <View
                 android:layout_width="match_parent"
                 android:layout_height="150dp"
@@ -75,7 +80,9 @@
         <FrameLayout
             android:layout_width="match_parent"
             android:layout_height="300dp"
-            android:layout_marginTop="100dp" >
+            android:layout_marginTop="100dp"
+            android:padding="2dp"
+            android:background="@color/black">
             <View
                 android:layout_width="match_parent"
                 android:layout_height="300dp"
@@ -92,5 +99,6 @@
                 android:background="@color/purple_700"
                 android:layout_marginTop="125dp" />
         </FrameLayout>
+
     </LinearLayout>
 </ScrollView>
