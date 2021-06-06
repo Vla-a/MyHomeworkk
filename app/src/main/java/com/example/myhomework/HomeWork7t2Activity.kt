@@ -20,8 +20,8 @@ class `HomeWork7t2Activity` : AppCompatActivity() {
 //        val password = intent.extras?.getString(PASSWORD)?: "uuuuu"
 //        Log.e("kkkkk", "$login, $password")
 
-        logi = findViewById(R.id.name_login)
-        pass = findViewById(R.id.name_password)
+        logi = findViewById(R.id.tv_name_login)
+        pass = findViewById(R.id.tv_name_password)
 
         logi.text = "Login: ${intent.extras?.getString(LOGIN)?: "No login"}"
         pass.text = "Password: ${intent.extras?.getString(PASSWORD)?: "No password"}"

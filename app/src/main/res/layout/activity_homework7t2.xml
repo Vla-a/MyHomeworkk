@@ -6,7 +6,7 @@
 
 
     <TextView
-        android:id="@+id/name"
+        android:id="@+id/tv_name"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textSize="30dp"
@@ -20,18 +20,17 @@
         android:orientation="vertical">
 
         <TextView
-            android:id="@+id/name_login"
+            android:id="@+id/tv_name_login"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/loginnn"
             android:textSize="15dp" />
 
         <TextView
-            android:id="@+id/name_password"
+            android:id="@+id/tv_name_password"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Password:"
             android:textSize="15dp" />
-
     </LinearLayout>
 </FrameLayout>

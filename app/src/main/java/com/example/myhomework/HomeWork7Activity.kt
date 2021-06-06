@@ -22,10 +22,10 @@ class HomeWork7Activity : AppCompatActivity() {
         setContentView(R.layout.activity_homework7)
 
 
-       click = findViewById(R.id.cliсk)
-        password = findViewById(R.id.password)
-        login = findViewById(R.id.login)
-        text = findViewById(R.id.textView)
+       click = findViewById(R.id.b_cliсk)
+        password = findViewById(R.id.et_password)
+        login = findViewById(R.id.et_login)
+        text = findViewById(R.id.tv_textView)
         val intent = Intent(this, HomeWork7t2Activity::class.java)
 
         val timer = object  :CountDownTimer(10000,1000){
