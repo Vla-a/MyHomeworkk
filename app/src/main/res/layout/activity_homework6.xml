@@ -9,7 +9,7 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical"
-        android:background="@color/my">
+        android:background="@color/my" >
 
 
         <LinearLayout
@@ -17,12 +17,13 @@
             android:layout_height="match_parent"
             android:orientation="vertical"
             android:padding="2dp"
-            android:background="@color/black">
+            android:background="@color/black"
+            >
             <View
                 android:layout_width="match_parent"
                 android:layout_height="100dp"
                 android:layout_weight="1"
-                android:background="@color/black" />
+                android:background="@color/black"/>
             <View
                 android:layout_width="match_parent"
                 android:layout_height="100dp"

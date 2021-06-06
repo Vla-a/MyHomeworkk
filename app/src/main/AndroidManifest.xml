@@ -17,6 +17,8 @@
             </intent-filter>
         </activity>
         <activity android:name=".HomeWork6Activity"/>
+        <activity android:name=".HomeWork7Activity"/>
+        <activity android:name=".HomeWork7t2Activity"/>
     </application>
 
 </manifest>
