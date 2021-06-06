@@ -40,10 +40,9 @@ class HomeWork7Activity : AppCompatActivity() {
                 password.visibility = View.VISIBLE
                 click.text = "enter"
                 click.setOnClickListener{
-         intent.putExtra(LOGIN, login.text.toString())
-          intent.putExtra(PASSWORD, password.text.toString())
-
-                    startActivity(intent)
+                intent.putExtra(LOGIN, login.text.toString())
+                intent.putExtra(PASSWORD, password.text.toString())
+                startActivity(intent)
                 }
             }
 

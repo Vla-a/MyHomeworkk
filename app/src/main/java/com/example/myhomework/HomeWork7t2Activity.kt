@@ -26,5 +26,6 @@ class `HomeWork7t2Activity` : AppCompatActivity() {
         logi.text = "Login: ${intent.extras?.getString(LOGIN)?: "No login"}"
         pass.text = "Password: ${intent.extras?.getString(PASSWORD)?: "No password"}"
 
+
     }
 }
