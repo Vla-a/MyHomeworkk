@@ -17,15 +17,15 @@ import java.util.*
 
 class MainActivity : AppCompatActivity() {
 
-    private lateinit var button1: Button
+    private lateinit var button6: Button
     private lateinit var button7: Button
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        button1 = findViewById(R.id.button6)
-        button1.setOnClickListener {
+        button6 = findViewById(R.id.button6)
+        button6.setOnClickListener {
 
             val intent = Intent(this, HomeWork6Activity::class.java)
             startActivity(intent)
