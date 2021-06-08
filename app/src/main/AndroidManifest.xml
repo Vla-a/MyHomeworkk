@@ -16,9 +16,9 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".HomeWork6Activity"/>
-        <activity android:name=".HomeWork7Activity"/>
-        <activity android:name=".HomeWork7t2Activity"/>
+        <activity android:name=".homework6.HomeWork6Activity"/>
+        <activity android:name=".homework7.HomeWork7Activity"/>
+        <activity android:name=".homework7.HomeWork7t2Activity"/>
     </application>
 
 </manifest>

@@ -1,7 +1,8 @@
-package com.example.myhomework
+package com.example.myhomework.homework6
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
+import com.example.myhomework.R
 
 class HomeWork6Activity: AppCompatActivity() {
 

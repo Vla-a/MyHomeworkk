@@ -1,4 +1,4 @@
-package com.example.myhomework
+package com.example.myhomework.homework7
 
 
 import android.content.Intent
@@ -9,6 +9,7 @@ import android.widget.Button
 import android.widget.EditText
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
+import com.example.myhomework.R
 
 class HomeWork7Activity : AppCompatActivity() {
 

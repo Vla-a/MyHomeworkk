@@ -1,13 +1,13 @@
-package com.example.myhomework
+package com.example.myhomework.homework7
 
 import android.os.Bundle
-import android.util.Log
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
-import com.example.myhomework.HomeWork7Activity.Companion.LOGIN
-import com.example.myhomework.HomeWork7Activity.Companion.PASSWORD
+import com.example.myhomework.R
+import com.example.myhomework.homework7.HomeWork7Activity.Companion.LOGIN
+import com.example.myhomework.homework7.HomeWork7Activity.Companion.PASSWORD
 
-class `HomeWork7t2Activity` : AppCompatActivity() {
+class HomeWork7t2Activity : AppCompatActivity() {
 
     private lateinit var logi: TextView
     private lateinit var pass: TextView
@@ -25,7 +25,5 @@ class `HomeWork7t2Activity` : AppCompatActivity() {
 
         logi.text = "Login: ${intent.extras?.getString(LOGIN)?: "No login"}"
         pass.text = "Password: ${intent.extras?.getString(PASSWORD)?: "No password"}"
-
-
     }
 }

@@ -2,17 +2,10 @@ package com.example.myhomework
 
 import android.content.Intent
 import android.os.Bundle
-import android.util.Log
 import android.widget.Button
-import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
-import com.example.myhomework.homework2.SixCars
-import com.example.myhomework.homework3.Dog
-import com.example.myhomework.homework3.Elephant
-import com.example.myhomework.homework4.Boss
-import com.example.myhomework.homework4.Manager
-import com.example.myhomework.homework4.Worker
-import java.util.*
+import com.example.myhomework.homework6.HomeWork6Activity
+import com.example.myhomework.homework7.HomeWork7Activity
 
 
 class MainActivity : AppCompatActivity() {
