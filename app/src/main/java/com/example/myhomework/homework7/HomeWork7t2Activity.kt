@@ -3,27 +3,25 @@ package com.example.myhomework.homework7
 import android.os.Bundle
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
-import com.example.myhomework.R
+import com.example.myhomework.databinding.ActivityHomework7t2Binding
 import com.example.myhomework.homework7.HomeWork7Activity.Companion.LOGIN
 import com.example.myhomework.homework7.HomeWork7Activity.Companion.PASSWORD
 
 class HomeWork7t2Activity : AppCompatActivity() {
 
-    private lateinit var logi: TextView
-    private lateinit var pass: TextView
+    private lateinit var binding: ActivityHomework7t2Binding
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_homework7t2)
+        binding = ActivityHomework7t2Binding.inflate(layoutInflater)
+        setContentView(binding.root)
 
-//        val login = intent.extras?.getString(LOGIN)?: "llll"
-//        val password = intent.extras?.getString(PASSWORD)?: "uuuuu"
-//        Log.e("kkkkk", "$login, $password")
+        binding.tvNameLogin.text = "Login: ${intent.extras?.getString(LOGIN) ?: "No login"}"
+        binding.tvNamePassword.text =
+            "Password: ${intent.extras?.getString(PASSWORD) ?: "No password"}"
 
-        logi = findViewById(R.id.tv_name_login)
-        pass = findViewById(R.id.tv_name_password)
-
-        logi.text = "Login: ${intent.extras?.getString(LOGIN)?: "No login"}"
-        pass.text = "Password: ${intent.extras?.getString(PASSWORD)?: "No password"}"
+        binding.btnStop.setOnClickListener {
+            finish()
+        }
     }
 }
