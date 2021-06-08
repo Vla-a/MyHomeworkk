@@ -22,7 +22,6 @@ class HomeWork7Activity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_homework7)
 
-
        click = findViewById(R.id.b_cliсk)
         password = findViewById(R.id.et_password)
         login = findViewById(R.id.et_login)
@@ -41,12 +40,13 @@ class HomeWork7Activity : AppCompatActivity() {
                 password.visibility = View.VISIBLE
                 click.text = "enter"
                 click.setOnClickListener{
-                intent.putExtra(LOGIN, login.text.toString())
-                intent.putExtra(PASSWORD, password.text.toString())
-                startActivity(intent)
+                startActivity(
+                    intent.apply {
+                        putExtra(LOGIN, login.text.toString())
+                        putExtra(PASSWORD, password.text.toString())
+                    } )
                 }
             }
-
         }
         click.setOnClickListener {
             timer.start()
