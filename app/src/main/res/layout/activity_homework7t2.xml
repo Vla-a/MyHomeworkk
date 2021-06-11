@@ -39,7 +39,7 @@
         app:layout_constraintBottom_toTopOf="@+id/tv_name_password"
         app:layout_constraintStart_toStartOf="@+id/tv_name_password" />
 
-    <Button
+    <com.google.android.material.button.MaterialButton
         android:id="@+id/btn_stop"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
@@ -47,7 +47,16 @@
         android:layout_marginTop="20dp"
         android:backgroundTint="@color/red"
         android:text="close"
+        app:cornerRadius="20dp"
         app:layout_constraintEnd_toEndOf="@+id/tv_name_password"
         app:layout_constraintStart_toStartOf="@+id/imageView"
         app:layout_constraintTop_toBottomOf="@+id/imageView" />
+
+    <ImageView
+        android:id="@+id/iv_picture1"
+        android:layout_width="match_parent"
+        android:layout_height="400dp"
+        android:layout_margin="16dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        tools:layout_editor_absoluteX="16dp" />
 </androidx.constraintlayout.widget.ConstraintLayout>

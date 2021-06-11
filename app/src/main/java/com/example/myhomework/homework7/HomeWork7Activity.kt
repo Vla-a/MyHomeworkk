@@ -5,6 +5,7 @@ import android.content.Intent
 import android.os.Bundle
 import android.view.View
 import androidx.appcompat.app.AppCompatActivity
+import com.bumptech.glide.Glide
 import com.example.myhomework.databinding.ActivityHomework7Binding
 
 
@@ -23,8 +24,8 @@ class HomeWork7Activity : AppCompatActivity() {
             counter--
             if (counter <= 0) {
                 binding.tvTextView.visibility = View.GONE
-                binding.etLogin.visibility = View.VISIBLE
-                binding.etPassword.visibility = View.VISIBLE
+                binding.inputLogin.visibility = View.VISIBLE
+                binding.inputPassword.visibility = View.VISIBLE
                 binding.bCliK.text = "enter"
                 binding.bCliK.setOnClickListener {
                     startActivity(
@@ -39,6 +40,10 @@ class HomeWork7Activity : AppCompatActivity() {
             counter = it.getInt(TIMER)
             binding.tvTextView.text = counter.toString()
         }
+        Glide
+            .with(this)
+            .load("https://img.fonwall.ru/o/45/zakat-more-gorizont-otrajenie.jpg")
+            .into(binding.ivPicture)
     }
 
     override fun onSaveInstanceState(outState: Bundle) {
@@ -50,5 +55,6 @@ class HomeWork7Activity : AppCompatActivity() {
         const val LOGIN = "LOGIN"
         const val PASSWORD = "PASSWORD"
         const val TIMER = "TIMER"
+        const val NAME = "NAME"
     }
 }

@@ -24,7 +24,7 @@ class MainActivity : AppCompatActivity() {
             startActivity(intent)
         }
         button7 = findViewById(R.id.button7)
-        button7.setOnClickListener{
+        button7.setOnClickListener {
             val intent1 = Intent(this, HomeWork7Activity::class.java)
             startActivity(intent1)
         }
