@@ -21,6 +21,7 @@
         <activity android:name=".homework6.HomeWork6Activity" />
         <activity android:name=".homework7.HomeWork7Activity" />
         <activity android:name=".homework7.HomeWork7t2Activity" />
+        <activity android:name=".homework10.HomeWork10Activity" />
     </application>
 
 </manifest>

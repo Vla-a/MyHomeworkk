@@ -4,14 +4,17 @@ import android.content.Intent
 import android.os.Bundle
 import android.widget.Button
 import androidx.appcompat.app.AppCompatActivity
+import com.example.myhomework.homework10.HomeWork10Activity
 import com.example.myhomework.homework6.HomeWork6Activity
 import com.example.myhomework.homework7.HomeWork7Activity
+import kotlin.random.Random
 
 
 class MainActivity : AppCompatActivity() {
 
     private lateinit var button6: Button
     private lateinit var button7: Button
+    private lateinit var button10: Button
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -28,7 +31,11 @@ class MainActivity : AppCompatActivity() {
             val intent1 = Intent(this, HomeWork7Activity::class.java)
             startActivity(intent1)
         }
-
+        button10 = findViewById(R.id.button10)
+        button10.setOnClickListener {
+            val intent2 = Intent(this, HomeWork10Activity::class.java)
+            startActivity(intent2)
+        }
 //        SixCars.createCar()
 //
 //        val bob = Dog("Bob", 43)

@@ -2,6 +2,9 @@
     <string name="app_name">MyHomework</string>
     <string name="home6_name">Homework6</string>
     <string name="home7_name">Homework7</string>
+    <string name="home10_name">Homework10</string>
     <string name="cliсk">CLIСK</string>
     <string name="loginnn">login</string>
+    <string name="Password">Password</string>
+    <string name="listСhocolates">list of chocolates</string>
 </resources>
