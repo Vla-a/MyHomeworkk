@@ -1,6 +1,7 @@
 package com.example.myhomework.homework10
 
 
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
@@ -14,7 +15,6 @@ class SweetAdapter(
     override fun getItemCount(): Int = sweetList.size
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): SweetViewHolder =
-
         SweetViewHolder(
             ItemSweetBinding.inflate(LayoutInflater.from(parent.context))
         )

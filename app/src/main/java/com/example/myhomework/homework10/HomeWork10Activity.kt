@@ -2,8 +2,10 @@ package com.example.myhomework.homework10
 
 
 import android.os.Bundle
+import android.util.Log
 import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
+import androidx.lifecycle.Observer
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.myhomework.databinding.ActivityHomework10Binding
 
@@ -24,7 +26,7 @@ class HomeWork10Activity : AppCompatActivity() {
             LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false)
         binding.rvSweet?.adapter = sweetAdapter
 
-        myViewModel.sweetLiveData.observe(this, {
+        myViewModel.sweetLiveData.observe(this, Observer{
             sweetAdapter.update(it)
         })
     }

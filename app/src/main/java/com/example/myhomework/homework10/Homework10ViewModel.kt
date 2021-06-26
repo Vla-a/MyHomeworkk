@@ -1,5 +1,6 @@
 package com.example.myhomework.homework10
 
+import android.util.Log
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 

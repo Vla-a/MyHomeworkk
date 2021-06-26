@@ -54,5 +54,17 @@
         app:layout_constraintTop_toBottomOf="@+id/button7"
         app:rippleColor="@color/red" />
 
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/button12"
+        style="@style/Base.CardView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/home12_name"
+        app:icon="@drawable/ic_baset_emoticon_24"
+        app:layout_constraintEnd_toEndOf="@+id/button10"
+        app:layout_constraintStart_toStartOf="@+id/button10"
+        app:layout_constraintTop_toBottomOf="@+id/button10"
+        app:rippleColor="@color/red" />
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>
