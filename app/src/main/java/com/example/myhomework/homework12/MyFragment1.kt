@@ -17,4 +17,8 @@ class MyFragment1 : Fragment() {
     ): View? {
         return inflater.inflate(R.layout.fragment1_homework12, container, false)
     }
+
+    override fun onDestroyView() {
+        super.onDestroyView()
+    }
 }

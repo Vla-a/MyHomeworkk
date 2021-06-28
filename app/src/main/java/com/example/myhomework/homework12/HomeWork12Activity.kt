@@ -2,7 +2,7 @@ package com.example.myhomework.homework12
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
-import com.example.myhomework.R
+import androidx.fragment.app.Fragment
 import com.example.myhomework.databinding.ActivityHomework12Binding
 
 
@@ -17,40 +17,29 @@ class HomeWork12Activity : AppCompatActivity() {
         setContentView(binding.root)
 
         binding.bNewFragment.setOnClickListener {
-            counter++
 
-            when (counter) {
-                1 -> {
-                    supportFragmentManager.beginTransaction()
-                        .replace(R.id.contener_fragment, MyFragment1())
-                        .commit()
-                }
-                2 -> {
-                    supportFragmentManager.beginTransaction()
-                        .replace(R.id.contener_fragment, MyFragment2())
-                        .commit()
-                }
-                3 -> {
-                    supportFragmentManager.beginTransaction()
-                        .replace(R.id.contener_fragment, MyFragment3())
-                        .commit()
-                }
-                4 -> {
-                    supportFragmentManager.beginTransaction()
-                        .replace(R.id.contener_fragment, MyFragment4())
-                        .commit()
-                }
-                5 -> {
-                    supportFragmentManager.beginTransaction()
-                        .replace(R.id.contener_fragment, MyFragment5())
-                        .commit()
-                    counter = 0
-                }
-            }
+            counter++
+            supportFragmentManager.beginTransaction()
+                .replace(binding.contenerFragment.id, newFragment())
+                .commit()
         }
     }
-}
 
+    private fun newFragment(): Fragment {
+
+        when (counter) {
+            1 -> return MyFragment1()
+            2 -> return MyFragment2()
+            3 -> return MyFragment3()
+            4 -> return MyFragment4()
+            5 -> {
+                counter = 0
+                return MyFragment5()
+            }
+        }
+        return Fragment()
+    }
+}
 
 
 
