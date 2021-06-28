@@ -13,7 +13,7 @@ import com.example.myhomework.databinding.ActivityHomework10Binding
 class HomeWork10Activity : AppCompatActivity() {
 
     private lateinit var binding: ActivityHomework10Binding
-    var listSweet: MutableList<Sweets> = mutableListOf()
+    private var listSweet: MutableList<Sweets> = mutableListOf()
     private val myViewModel: Homework10ViewModel by viewModels()
 
     override fun onCreate(savedInstanceState: Bundle?) {

@@ -1,7 +1,6 @@
 package com.example.myhomework.homework10
 
 
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
@@ -38,30 +37,22 @@ class SweetAdapter(
             bindingView.tvMarka.text = item.marka
             bindingView.tvKod.text = item.kod.toString()
 
-            chekPhoto(item)
+            Glide
+                .with(itemView.context)
+                .load(chekPhoto(item))
+                .into(bindingView.ivPhoto)
         }
 
-        private fun chekPhoto(item: Sweets) {
-            when (bindingView.tvMarka.text) {
-                SaveSweetsList.MARS -> {
-                    Glide
-                        .with(itemView.context)
-                        .load("https://cdn1.ozone.ru/multimedia/1019690063.jpg")
-                        .into(bindingView.ivPhoto)
-                }
-                SaveSweetsList.SNICKERS -> {
-                    Glide
-                        .with(itemView.context)
-                        .load("https://korzina.su/upload/iblock/315/315a795fada7a41e0094c1c1ee84d08f.jpg")
-                        .into(bindingView.ivPhoto)
-                }
-                SaveSweetsList.NUTS -> {
-                    Glide
-                        .with(itemView.context)
-                        .load("https://edimdomakmv.ru/wp-content/uploads/2020/04/3051232h.jpg")
-                        .into(bindingView.ivPhoto)
-                }
+        private fun chekPhoto(item: Sweets): String {
+            when (item.marka) {
+                SaveSweetsList.MARS ->
+                    return "https://cdn1.ozone.ru/multimedia/1019690063.jpg"
+                SaveSweetsList.SNICKERS ->
+                    return "https://korzina.su/upload/iblock/315/315a795fada7a41e0094c1c1ee84d08f.jpg"
+                SaveSweetsList.NUTS ->
+                    return "https://edimdomakmv.ru/wp-content/uploads/2020/04/3051232h.jpg"
             }
+            return ""
         }
     }
 }
