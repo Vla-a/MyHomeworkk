@@ -17,7 +17,6 @@ class HomeWork12Activity : AppCompatActivity() {
         setContentView(binding.root)
 
         binding.bNewFragment.setOnClickListener {
-
             counter++
             supportFragmentManager.beginTransaction()
                 .replace(binding.contenerFragment.id, newFragment())
