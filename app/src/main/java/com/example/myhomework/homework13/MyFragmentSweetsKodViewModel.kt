@@ -14,10 +14,6 @@ class MyFragmentSweetsKodViewModel : ViewModel() {
         getSweetsList()
     }
 
-    override fun onCleared() {
-        super.onCleared()
-    }
-
     private fun getSweetsList() {
         Log.e("aaa", "getSweetsList()")
         sweetsLiveData2.value = SaveSweetsList().result()
