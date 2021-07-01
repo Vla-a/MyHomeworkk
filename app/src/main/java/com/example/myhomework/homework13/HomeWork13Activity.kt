@@ -28,7 +28,8 @@ class HomeWork13Activity : AppCompatActivity() {
         toast.show()
 
         val fragment = FragmentItemSweet().apply {
-            arguments = bundleOf("Key" to sweet)
+            arguments = bundleOf(MyFragmentSweetsKod.KEY to sweet)
+
         }
 
         supportFragmentManager.beginTransaction()

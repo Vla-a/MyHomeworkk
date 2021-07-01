@@ -27,7 +27,7 @@ class FragmentItemSweet : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        val info = arguments?.getSerializable("Key") as? Sweets
+        val info = arguments?.getSerializable(MyFragmentSweetsKod.KEY) as? Sweets
         binding?.tvN?.text = info?.marka
         binding?.tvK?.text = info?.kod.toString()
 
@@ -53,8 +53,7 @@ class FragmentItemSweet : Fragment() {
     override fun onDestroyView() {
         super.onDestroyView()
         binding = null
-        Log.e("aaa", "onDestroyView")
-    }
+           }
 
     companion object {
         const val TAG1 = "MyFragmentSweet"

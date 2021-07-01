@@ -55,5 +55,6 @@ class MyFragmentSweetsKod : Fragment() {
 
     companion object {
         const val TAG = "MyFragmentSweetKod"
+        const val KEY = "Key"
     }
 }
