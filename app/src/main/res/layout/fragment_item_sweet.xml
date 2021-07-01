@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+<TextView
+    android:id="@+id/tv_n"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:text="@string/Password"/>
+
+    <TextView
+        android:id="@+id/tv_k"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:text="@string/Password"
+        android:layout_marginStart="80dp"/>
+    <ImageView
+        android:id="@+id/im_picther"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginStart="180dp"
+        android:src="@drawable/ic_baset_emoticon_24"/>
+</androidx.constraintlayout.widget.ConstraintLayout>

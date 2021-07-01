@@ -2,23 +2,24 @@ package com.example.myhomework
 
 import android.content.Intent
 import android.os.Bundle
-import android.util.Log
+import android.view.View
 import android.widget.Button
 import androidx.appcompat.app.AppCompatActivity
-import com.example.myhomework.databinding.ActivityHomework12Binding
 import com.example.myhomework.homework10.HomeWork10Activity
 import com.example.myhomework.homework12.HomeWork12Activity
+import com.example.myhomework.homework13.HomeWork13Activity
 import com.example.myhomework.homework6.HomeWork6Activity
 import com.example.myhomework.homework7.HomeWork7Activity
 import kotlin.random.Random
 
 
-class  MainActivity : AppCompatActivity() {
+class  MainActivity : AppCompatActivity(), View.OnClickListener {
 
     private lateinit var button6: Button
     private lateinit var button7: Button
     private lateinit var button10: Button
     private lateinit var button12: Button
+    private lateinit var button13: Button
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -45,6 +46,11 @@ class  MainActivity : AppCompatActivity() {
             val intent3 = Intent(this, HomeWork12Activity::class.java)
             startActivity(intent3)
         }
+        button13 = findViewById(R.id.button13)
+        button13.setOnClickListener {
+            startActivity(Intent(this, HomeWork13Activity::class.java))
+        }
+
 //        SixCars.createCar()
 //
 //        val bob = Dog("Bob", 43)
@@ -168,5 +174,14 @@ class  MainActivity : AppCompatActivity() {
 //        super.onDestroy()
 //        Log.e("fff", "onDestroy")
 //    }
+    }
+
+    override fun onClick(v: View?) {
+       when(v?.id){
+R.id.button6 -> button6.setOnClickListener {
+    val intent = Intent(this, HomeWork6Activity::class.java)
+    startActivity(intent)
+}
+       }
     }
 }

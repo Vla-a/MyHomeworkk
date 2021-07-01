@@ -6,17 +6,18 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.example.myhomework.databinding.ItemSweetBinding
+import com.example.myhomework.homework13.OnItemClickListener
 
 class SweetAdapter(
-    private val sweetList: MutableList<Sweets>
+    private val sweetList: MutableList<Sweets>,
+
 ) : RecyclerView.Adapter<SweetAdapter.SweetViewHolder>() {
 
     override fun getItemCount(): Int = sweetList.size
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): SweetViewHolder =
         SweetViewHolder(
-            ItemSweetBinding.inflate(LayoutInflater.from(parent.context))
-        )
+            ItemSweetBinding.inflate(LayoutInflater.from(parent.context)) )
 
 
     override fun onBindViewHolder(holder: SweetViewHolder, position: Int) {
@@ -30,7 +31,9 @@ class SweetAdapter(
         notifyDataSetChanged()
     }
 
-    class SweetViewHolder(val bindingView: ItemSweetBinding) :
+    class SweetViewHolder(
+        private val bindingView: ItemSweetBinding
+    ) :
         RecyclerView.ViewHolder(bindingView.root) {
 
         fun bind(item: Sweets) {
