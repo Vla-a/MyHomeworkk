@@ -1,7 +1,6 @@
 package com.example.myhomework.homework13
 
 import android.os.Bundle
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -12,7 +11,7 @@ import com.example.myhomework.homework10.SaveSweetsList
 import com.example.myhomework.homework10.Sweets
 
 
-class FragmentItemSweet : Fragment() {
+class   ItemSweetFragment : Fragment() {
 
     var binding: FragmentItemSweetBinding? = null
     val bundle = Bundle()
@@ -28,7 +27,7 @@ class FragmentItemSweet : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         val info = arguments?.getSerializable(MyFragmentSweetsKod.KEY) as? Sweets
-        binding?.tvN?.text = info?.marka
+        binding?.tvN?.text = info?.brand
         binding?.tvK?.text = info?.kod.toString()
 
         Glide

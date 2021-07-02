@@ -40,7 +40,7 @@ class SweetAdapter2(
         RecyclerView.ViewHolder(bindingView.root) {
 
         fun bind(item: Sweets) {
-            bindingView.tvMarka2.text = item.marka
+            bindingView.tvMarka2.text = item.brand
             bindingView.tvKod2.text = item.kod.toString()
 
             itemView.setOnClickListener { clickListener(item) }

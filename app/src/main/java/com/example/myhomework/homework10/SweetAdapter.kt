@@ -36,7 +36,7 @@ class SweetAdapter(
         RecyclerView.ViewHolder(bindingView.root) {
 
         fun bind(item: Sweets) {
-            bindingView.tvMarka.text = item.marka
+            bindingView.tvMarka.text = item.brand
             bindingView.tvKod.text = item.kod.toString()
 
             Glide
@@ -46,7 +46,7 @@ class SweetAdapter(
         }
 
         private fun chekPhoto(item: Sweets): String {
-            when (item.marka) {
+            when (item.brand) {
                 SaveSweetsList.MARS ->
                     return "https://cdn1.ozone.ru/multimedia/1019690063.jpg"
                 SaveSweetsList.SNICKERS ->

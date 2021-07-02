@@ -24,16 +24,15 @@ class HomeWork13Activity : AppCompatActivity() {
     }
 
     fun clickListener(sweet: Sweets) {
-        val toast = Toast.makeText(this, "${sweet.marka}, ${sweet.kod}", Toast.LENGTH_SHORT)
+        val toast = Toast.makeText(this, "${sweet.brand}, ${sweet.kod}", Toast.LENGTH_SHORT)
         toast.show()
 
-        val fragment = FragmentItemSweet().apply {
+        val fragment = ItemSweetFragment().apply {
             arguments = bundleOf(MyFragmentSweetsKod.KEY to sweet)
-
         }
 
         supportFragmentManager.beginTransaction()
-            .replace(binding.cFragment.id, fragment, FragmentItemSweet.TAG1)
+            .replace(binding.cFragment.id, fragment, ItemSweetFragment.TAG1)
             .addToBackStack(null)
             .commit()
     }

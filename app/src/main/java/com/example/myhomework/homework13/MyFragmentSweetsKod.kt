@@ -16,7 +16,6 @@ import com.example.myhomework.homework10.Sweets
 class MyFragmentSweetsKod : Fragment() {
 
     private var binding: MyFragmentSweetsKodFragmentBinding? = null
-    private var listSweet: MutableList<Sweets> = mutableListOf()
     private val myViewModel: MyFragmentSweetsKodViewModel by viewModels()
 
 
@@ -31,6 +30,7 @@ class MyFragmentSweetsKod : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
+        var listSweet: MutableList<Sweets> = mutableListOf()
         val sweetAdapter = SweetAdapter2(listSweet) { clickListener(it) }
 
         binding!!.rvSweet2?.layoutManager =
@@ -44,7 +44,7 @@ class MyFragmentSweetsKod : Fragment() {
 
     private fun clickListener(sweet: Sweets) {
 
-        (activity as HomeWork13Activity).clickListener(sweet)
+        (activity as? HomeWork13Activity)?.clickListener(sweet)
     }
 
     override fun onDestroyView() {
