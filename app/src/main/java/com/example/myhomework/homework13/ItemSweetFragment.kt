@@ -4,8 +4,10 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.view.animation.AnimationUtils
 import androidx.fragment.app.Fragment
 import com.bumptech.glide.Glide
+import com.example.myhomework.R
 import com.example.myhomework.databinding.FragmentItemSweetBinding
 import com.example.myhomework.homework10.SaveSweetsList
 import com.example.myhomework.homework10.Sweets
@@ -20,8 +22,11 @@ class   ItemSweetFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
+
+
         binding = FragmentItemSweetBinding.inflate(inflater, container, false)
         return binding?.root
+
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
@@ -34,6 +39,10 @@ class   ItemSweetFragment : Fragment() {
             .with(this)
             .load(chekPhoto(view))
             .into(binding!!.imPicther)
+
+        val anim = AnimationUtils.loadAnimation(this.context, R.anim.anim_brand)
+        binding!!.imPicther.startAnimation(anim)
+
     }
 
     private fun chekPhoto(view: View): String {

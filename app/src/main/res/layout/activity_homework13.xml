@@ -7,12 +7,12 @@
         android:id="@+id/cont_fragment"
         android:layout_width="match_parent"
         android:layout_height="500dp"
-        android:layout_marginTop="100dp"/>
+        android:layout_marginTop="150dp"/>
 
     <androidx.fragment.app.FragmentContainerView
         android:id="@+id/c_fragment"
         android:layout_width="match_parent"
-        android:layout_height="100dp"
+        android:layout_height="150dp"
         />
 </FrameLayout>
 
