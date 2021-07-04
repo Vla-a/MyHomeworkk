@@ -28,12 +28,9 @@ class HomeWork13Activity : AppCompatActivity() {
             .replace(binding.contFragment.id, MyFragmentSweetsKod(), MyFragmentSweetsKod.TAG)
             .commit()
 
-//        val toastBrand = SharedPrefsUtils.sharedPrefs.getString(PREFS_BRAND_KEY, "NO VALUES")
-//        val toastKod = SharedPrefsUtils.sharedPrefs.getString(PREFS_KOD_KEY, "NO VALUES")
-        val toastBrand =
-            getSharedPreferences(PREFS_KEY, MODE_PRIVATE).getString(PREFS_BRAND_KEY, "NO VALUES")
-        val toastKod =
-            getSharedPreferences(PREFS_KEY, MODE_PRIVATE).getString(PREFS_KOD_KEY, "NO VALUES")
+        val toastBrand = SharedPrefsUtils.sharedPrefs.getString(PREFS_BRAND_KEY, "NO VALUES")
+        val toastKod = SharedPrefsUtils.sharedPrefs.getString(PREFS_KOD_KEY, "NO VALUES")
+
         val toast = Toast.makeText(this, "$toastBrand, $toastKod", Toast.LENGTH_SHORT)
         toast.show()
 
@@ -43,13 +40,9 @@ class HomeWork13Activity : AppCompatActivity() {
 //        val toast = Toast.makeText(this, "${sweet.brand}, ${sweet.kod}", Toast.LENGTH_SHORT)
 //        toast.show()
 
-        val sharedPreferences = getSharedPreferences(PREFS_KEY, MODE_PRIVATE)
-        sharedPreferences.edit().putString(PREFS_BRAND_KEY, sweet.brand).apply()
-        sharedPreferences.edit().putString(PREFS_KOD_KEY, sweet.kod.toString()).apply()
 
-
-//        SharedPrefsUtils.putString(PREFS_BRAND_KEY, sweet.brand)
-//        SharedPrefsUtils.putString(PREFS_KOD_KEY, sweet.kod.toString())
+        SharedPrefsUtils.putString(PREFS_BRAND_KEY, sweet.brand)
+        SharedPrefsUtils.putString(PREFS_KOD_KEY, sweet.kod.toString())
 
         val fragment = ItemSweetFragment().apply {
             arguments = bundleOf(MyFragmentSweetsKod.KEY to sweet)

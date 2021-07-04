@@ -1,10 +1,10 @@
-package com.example.myhomework.homework13
+package com.example.myhomework
 
 import android.app.Application
 import com.example.myhomework.sharedprefs.SharedPrefsKeys
 import com.example.myhomework.sharedprefs.SharedPrefsUtils
 
-class MySyperApp : Application() {
+class MySuperApp : Application() {
 
     override fun onCreate() {
         super.onCreate()
