@@ -15,7 +15,7 @@
         app:layout_constraintBottom_toBottomOf="@+id/iv_photo2"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        tools:text="Marka" />
+        tools:text="Kod" />
 
     <TextView
         android:id="@+id/tv_marka2"
@@ -27,7 +27,7 @@
         app:layout_constraintBottom_toBottomOf="@+id/iv_photo2"
         app:layout_constraintStart_toEndOf="@+id/tv_kod2"
         app:layout_constraintTop_toTopOf="parent"
-        tools:text="Kod" />
+        tools:text="Brand" />
 
     <ImageView
         android:id="@+id/iv_photo2"

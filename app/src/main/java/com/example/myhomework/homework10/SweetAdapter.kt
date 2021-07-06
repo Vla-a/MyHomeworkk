@@ -37,7 +37,7 @@ class SweetAdapter(
 
         fun bind(item: Sweets) {
             bindingView.tvMarka.text = item.brand
-            bindingView.tvKod.text = item.kod.toString()
+            bindingView.tvKod.text = item.code.toString()
 
             Glide
                 .with(itemView.context)

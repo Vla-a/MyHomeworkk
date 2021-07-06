@@ -13,10 +13,10 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.myhomework.databinding.MyFragmentSweetsKodFragmentBinding
 import com.example.myhomework.homework10.Sweets
 
-class MyFragmentSweetsKod : Fragment() {
+class MyFragmentSweetsCode : Fragment() {
 
     private var binding: MyFragmentSweetsKodFragmentBinding? = null
-    private val myViewModel: MyFragmentSweetsKodViewModel by viewModels()
+    private val myViewModel: MyFragmentSweetsCodeViewModel by viewModels()
 
 
     override fun onCreateView(

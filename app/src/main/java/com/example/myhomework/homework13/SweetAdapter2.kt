@@ -41,7 +41,7 @@ class SweetAdapter2(
 
         fun bind(item: Sweets) {
             bindingView.tvMarka2.text = item.brand
-            bindingView.tvKod2.text = item.kod.toString()
+            bindingView.tvKod2.text = item.code.toString()
 
             itemView.setOnClickListener { clickListener(item) }
         }

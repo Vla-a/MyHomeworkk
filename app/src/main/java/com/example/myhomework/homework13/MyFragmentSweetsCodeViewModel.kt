@@ -6,7 +6,7 @@ import androidx.lifecycle.ViewModel
 import com.example.myhomework.homework10.SaveSweetsList
 import com.example.myhomework.homework10.Sweets
 
-class MyFragmentSweetsKodViewModel : ViewModel() {
+class MyFragmentSweetsCodeViewModel : ViewModel() {
 
     val sweetsLiveData2: MutableLiveData<MutableList<Sweets>> = MutableLiveData()
 

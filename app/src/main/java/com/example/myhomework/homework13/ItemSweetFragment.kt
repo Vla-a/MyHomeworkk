@@ -23,17 +23,15 @@ class   ItemSweetFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
 
-
         binding = FragmentItemSweetBinding.inflate(inflater, container, false)
         return binding?.root
-
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        val info = arguments?.getSerializable(MyFragmentSweetsKod.KEY) as? Sweets
+        val info = arguments?.getSerializable(MyFragmentSweetsCode.KEY) as? Sweets
         binding?.tvN?.text = info?.brand
-        binding?.tvK?.text = info?.kod.toString()
+        binding?.tvK?.text = info?.code.toString()
 
         Glide
             .with(this)

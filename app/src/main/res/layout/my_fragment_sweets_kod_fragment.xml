@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".homework13.MyFragmentSweetsKod">
+    tools:context=".homework13.MyFragmentSweetsCode">
 
     <TextView
         android:id="@+id/tv_sweet2"
