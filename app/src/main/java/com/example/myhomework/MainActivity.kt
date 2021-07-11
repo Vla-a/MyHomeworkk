@@ -8,18 +8,19 @@ import androidx.appcompat.app.AppCompatActivity
 import com.example.myhomework.homework10.HomeWork10Activity
 import com.example.myhomework.homework12.HomeWork12Activity
 import com.example.myhomework.homework13.HomeWork13Activity
+import com.example.myhomework.homework15.HomeWork15Activity
 import com.example.myhomework.homework6.HomeWork6Activity
 import com.example.myhomework.homework7.HomeWork7Activity
-import kotlin.random.Random
 
 
-class  MainActivity : AppCompatActivity(), View.OnClickListener {
+class MainActivity : AppCompatActivity(), View.OnClickListener {
 
     private lateinit var button6: Button
     private lateinit var button7: Button
     private lateinit var button10: Button
     private lateinit var button12: Button
     private lateinit var button13: Button
+    private lateinit var button15: Button
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -41,7 +42,7 @@ class  MainActivity : AppCompatActivity(), View.OnClickListener {
             val intent2 = Intent(this, HomeWork10Activity::class.java)
             startActivity(intent2)
         }
-        button12 =findViewById(R.id.button12)
+        button12 = findViewById(R.id.button12)
         button12.setOnClickListener {
             val intent3 = Intent(this, HomeWork12Activity::class.java)
             startActivity(intent3)
@@ -49,6 +50,10 @@ class  MainActivity : AppCompatActivity(), View.OnClickListener {
         button13 = findViewById(R.id.button13)
         button13.setOnClickListener {
             startActivity(Intent(this, HomeWork13Activity::class.java))
+        }
+        button15 = findViewById((R.id.button15))
+        button15.setOnClickListener {
+            startActivity(Intent(this, HomeWork15Activity::class.java))
         }
 
 //        SixCars.createCar()
@@ -177,11 +182,11 @@ class  MainActivity : AppCompatActivity(), View.OnClickListener {
     }
 
     override fun onClick(v: View?) {
-       when(v?.id){
-R.id.button6 -> button6.setOnClickListener {
-    val intent = Intent(this, HomeWork6Activity::class.java)
-    startActivity(intent)
-}
-       }
+        when (v?.id) {
+            R.id.button6 -> button6.setOnClickListener {
+                val intent = Intent(this, HomeWork6Activity::class.java)
+                startActivity(intent)
+            }
+        }
     }
 }
