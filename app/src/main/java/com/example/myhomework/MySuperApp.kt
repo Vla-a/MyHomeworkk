@@ -2,9 +2,9 @@ package com.example.myhomework
 
 import android.app.Application
 import androidx.room.Room
-import com.example.myhomework.homework15.database.MessageDao
-import com.example.myhomework.homework15.database.MessageDatabase
-import com.example.myhomework.homework15.database.MessageRepository
+import com.example.myhomework.homework16.database.MessageDao
+import com.example.myhomework.homework16.database.MessageDatabase
+import com.example.myhomework.homework16.database.MessageRepository
 import com.example.myhomework.sharedprefs.SharedPrefsKeys
 import com.example.myhomework.sharedprefs.SharedPrefsUtils
 

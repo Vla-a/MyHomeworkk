@@ -1,5 +1,6 @@
 package com.example.myhomework.homework13
 
+import android.animation.ObjectAnimator
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -13,7 +14,7 @@ import com.example.myhomework.homework10.SaveSweetsList
 import com.example.myhomework.homework10.Sweets
 
 
-class   ItemSweetFragment : Fragment() {
+class ItemSweetFragment : Fragment() {
 
     var binding: FragmentItemSweetBinding? = null
     val bundle = Bundle()
@@ -32,6 +33,13 @@ class   ItemSweetFragment : Fragment() {
         val info = arguments?.getSerializable(MyFragmentSweetsCode.KEY) as? Sweets
         binding?.tvN?.text = info?.brand
         binding?.tvK?.text = info?.code.toString()
+
+        ObjectAnimator.ofFloat(binding?.tvN, View.ALPHA, 0f, 1f).apply {
+            duration = 2000
+        }.start()
+        ObjectAnimator.ofFloat(binding?.tvK, View.ALPHA, 0f, 1f).apply {
+            duration = 2000
+        }.start()
 
         Glide
             .with(this)
@@ -59,7 +67,7 @@ class   ItemSweetFragment : Fragment() {
     override fun onDestroyView() {
         super.onDestroyView()
         binding = null
-           }
+    }
 
     companion object {
         const val TAG1 = "MyFragmentSweet"

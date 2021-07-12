@@ -1,6 +1,6 @@
-package com.example.myhomework.homework15.database
+package com.example.myhomework.homework16.database
 
-import com.example.myhomework.homework15.Message
+import com.example.myhomework.homework16.Message
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.map
 
@@ -25,5 +25,5 @@ class MessageRepository(
         messageDao.deleteMessage(message.entity())
     }
 
-    fun Message.entity() = MessageEntity(this.message, this.date)
+    private fun Message.entity() = MessageEntity(this.message, this.date)
 }

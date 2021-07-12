@@ -1,4 +1,4 @@
-package com.example.myhomework.homework15
+package com.example.myhomework.homework16
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
@@ -45,4 +45,5 @@ class MessageAdapter(
             }
         }
     }
+
 }
