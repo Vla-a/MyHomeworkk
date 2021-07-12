@@ -3,13 +3,13 @@ package com.example.myhomework.homework15
 
 import androidx.lifecycle.*
 import com.example.myhomework.homework15.database.MessageEntity
-import com.example.myhomework.homework15.database.MessageRepositiry
+import com.example.myhomework.homework15.database.MessageRepository
 import kotlinx.coroutines.launch
 import java.text.SimpleDateFormat
 import java.util.*
 
 class HomeWork15ViewModel(
-    private val messageRepository: MessageRepositiry
+    private val messageRepository: MessageRepository
 ) : ViewModel() {
 
     val messageListLiveData: LiveData<List<Message>> =
@@ -35,7 +35,7 @@ class HomeWork15ViewModel(
 }
 
 class HomeWork15ViewModelFactory(
-    private val messageRepository: MessageRepositiry
+    private val messageRepository: MessageRepository
 ) : ViewModelProvider.Factory {
     override fun <T : ViewModel?> create(modelClass: Class<T>): T {
         return HomeWork15ViewModel(messageRepository) as T

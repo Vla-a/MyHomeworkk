@@ -4,7 +4,7 @@ import com.example.myhomework.homework15.Message
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.map
 
-class MessageRepositiry(
+class MessageRepository(
     private val messageDao: MessageDao
 ) {
 

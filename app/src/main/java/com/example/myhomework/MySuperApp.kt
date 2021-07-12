@@ -4,7 +4,7 @@ import android.app.Application
 import androidx.room.Room
 import com.example.myhomework.homework15.database.MessageDao
 import com.example.myhomework.homework15.database.MessageDatabase
-import com.example.myhomework.homework15.database.MessageRepositiry
+import com.example.myhomework.homework15.database.MessageRepository
 import com.example.myhomework.sharedprefs.SharedPrefsKeys
 import com.example.myhomework.sharedprefs.SharedPrefsUtils
 
@@ -15,7 +15,7 @@ class MySuperApp : Application() {
     }
     private val messageDao: MessageDao by lazy { messageDatabase.MessageDao() }
 
-    val messageRepository: MessageRepositiry by lazy { MessageRepositiry(messageDao) }
+    val messageRepository: MessageRepository by lazy { MessageRepository(messageDao) }
     override fun onCreate() {
         super.onCreate()
 
