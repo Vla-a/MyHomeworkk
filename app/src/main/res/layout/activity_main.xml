@@ -82,12 +82,21 @@
         style="@style/Base.CardView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/home15_name"
+        android:text="@string/home16_name"
         app:icon="@drawable/ic_baset_emoticon_24"
         app:layout_constraintEnd_toEndOf="@+id/button13"
         app:layout_constraintStart_toStartOf="@+id/button13"
         app:layout_constraintTop_toBottomOf="@+id/button13" />
 
-
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/button17"
+        style="@style/Base.CardView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/home17_name"
+        app:icon="@drawable/ic_baset_emoticon_24"
+        app:layout_constraintEnd_toEndOf="@+id/button15"
+        app:layout_constraintStart_toStartOf="@+id/button15"
+        app:layout_constraintTop_toBottomOf="@+id/button15" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

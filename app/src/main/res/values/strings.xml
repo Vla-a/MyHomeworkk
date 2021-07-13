@@ -5,11 +5,15 @@
     <string name="home10_name">Homework10</string>
     <string name="home12_name">Homework12</string>
     <string name="home13_name">Homework13</string>
-    <string name="home15_name">Homework15</string>
+    <string name="home16_name">Homework16</string>
+    <string name="home17_name">Homework17</string>
     <string name="cliсk">CLIСK</string>
     <string name="loginnn">login</string>
     <string name="Password">Password</string>
     <string name="listСhocolates">list of chocolates</string>
     <string name="new_fragment">New fragment</string>
     <string name="no_value">NO VALUES</string>
+    <string name="listCurrency">list of Currency</string>
+    <string name="Enter">Enter</string>
+    <string name="Sort">SORT:</string>
 </resources>

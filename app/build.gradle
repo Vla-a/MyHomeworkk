@@ -22,6 +22,10 @@ android {
         release {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+            buildConfigField "String", "API_KEY", '"be810a3e-df1b-431c-9db9-be17ac3ee12e"'
+        }
+        debug {
+            buildConfigField "String", "API_KEY", '"be810a3e-df1b-431c-9db9-be17ac3ee12e"'
         }
     }
     compileOptions {
@@ -38,6 +42,10 @@ android {
 }
 
 dependencies {
+    implementation "com.squareup.retrofit2:retrofit:2.9.0"
+    implementation "com.squareup.retrofit2:converter-gson:2.7.1"
+    implementation "com.google.code.gson:gson:2.8.7"
+    implementation "com.squareup.okhttp3:logging-interceptor:3.14.1"
 
     implementation "androidx.lifecycle:lifecycle-livedata-ktx:2.3.0" //для конвертации Flow в LiveData
     implementation "androidx.room:room-ktx:2.3.0" //для корутин в Room

@@ -9,6 +9,7 @@ import com.example.myhomework.homework10.HomeWork10Activity
 import com.example.myhomework.homework12.HomeWork12Activity
 import com.example.myhomework.homework13.HomeWork13Activity
 import com.example.myhomework.homework16.HomeWork15Activity
+import com.example.myhomework.homework17.HomeWork17Activity
 import com.example.myhomework.homework6.HomeWork6Activity
 import com.example.myhomework.homework7.HomeWork7Activity
 
@@ -21,6 +22,8 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
     private lateinit var button12: Button
     private lateinit var button13: Button
     private lateinit var button15: Button
+    private lateinit var button17: Button
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -51,9 +54,14 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
         button13.setOnClickListener {
             startActivity(Intent(this, HomeWork13Activity::class.java))
         }
-        button15 = findViewById((R.id.button15))
+        button15 = findViewById(R.id.button15)
         button15.setOnClickListener {
             startActivity(Intent(this, HomeWork15Activity::class.java))
+        }
+
+        button17 = findViewById(R.id.button17)
+        button17.setOnClickListener {
+            startActivity(Intent(this, HomeWork17Activity::class.java))
         }
 
 //        SixCars.createCar()
