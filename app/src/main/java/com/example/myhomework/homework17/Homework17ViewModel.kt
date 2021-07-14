@@ -15,12 +15,6 @@ class Homework17ViewModel(
 ) : ViewModel() {
 
     val currencyLiveData: MutableLiveData<MutableList<Currency>> = MutableLiveData()
-    private var limit: Int = 2
-    var name: String = "name"
-
-    init {
-        addCount(limit, name)
-    }
 
     fun addCount(limit: Int, name: String) {
         viewModelScope.launch(Dispatchers.Main) {
