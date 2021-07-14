@@ -16,4 +16,5 @@
     <string name="listCurrency">list of Currency</string>
     <string name="Enter">Enter</string>
     <string name="Sort">SORT:</string>
+    <string name="Limit">Enter limit:</string>
 </resources>

@@ -20,9 +20,8 @@ class HomeWork17Activity : AppCompatActivity() {
         HomeWork17ViewModelFactory((application as MySuperApp).currencyRepository)
     }
 
-    private  val currencyAdapter: CurrencyAdapter = CurrencyAdapter()
-
-
+    private val currencyAdapter: CurrencyAdapter = CurrencyAdapter()
+    private lateinit var sortName: String
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -30,34 +29,28 @@ class HomeWork17Activity : AppCompatActivity() {
         binding = ActivityHomework17Binding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        with( binding.rvCurrency){
+        with(binding.rvCurrency) {
             adapter = currencyAdapter
             layoutManager = LinearLayoutManager(this@HomeWork17Activity)
         }
 
-
-
         binding.btnEnter.setOnClickListener {
 
             myViewModel.currencyLiveData.observe(this, {
-                currencyAdapter.update(it)
+                it?.let {
+                    currencyAdapter.update(it)
+                }
             })
 
+            sortName = if (binding.checkBox2.isChecked) {
+               binding.checkBox2.text.toString()
+            } else {
+               binding.checkBox1.text.toString()
+            }
+
             with(binding.editTextLimit) {
-                myViewModel.addCount(text.toString().toInt())
-                setText("${text.toString()}")
-                Log.e("ddd", "edittext =$text")
+                myViewModel.addCount(text.toString().toInt(), sortName)
             }
-//            binding.editTextLimit.visibility = View.GONE
-            if (binding.checkBox2.isChecked) {
-               myViewModel.addString(binding.checkBox2.text.toString())
-            }else if(binding.checkBox1.isChecked) {
-                myViewModel.addString(binding.checkBox1.text.toString())
-            }
-
-
         }
-
-
     }
 }

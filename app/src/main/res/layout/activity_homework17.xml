@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-xmlns:app="http://schemas.android.com/apk/res-auto"
-xmlns:tools="http://schemas.android.com/tools"
-android:layout_width="match_parent"
-android:layout_height="match_parent">
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
 
     <TextView
         android:id="@+id/textView2"
@@ -27,33 +27,34 @@ android:layout_height="match_parent">
         app:layout_constraintTop_toBottomOf="@+id/textView2" />
 
     <EditText
-    android:id="@+id/editText_limit"
-    android:layout_width="100dp"
-    android:layout_height="wrap_content"
-    android:layout_marginBottom="24dp"
-    android:layout_marginStart="16dp"
-    android:background="@color/my"
-    android:ems="10"
-    android:hint="limit"
-    android:paddingStart="12dp"
-    app:layout_constraintBottom_toBottomOf="parent"
-    app:layout_constraintStart_toStartOf="parent" />
+        android:id="@+id/editText_limit"
+        android:layout_width="100dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginBottom="24dp"
+        android:background="@color/my"
+        android:ems="10"
+        android:hint="@string/Limit"
+        android:inputType="number"
+        android:paddingStart="12dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
 
-<Button
-    android:id="@+id/btn_enter"
-    android:layout_width="wrap_content"
-    android:layout_height="wrap_content"
-    android:layout_marginStart="24dp"
-    android:text="@string/Enter"
-    app:layout_constraintBottom_toBottomOf="@+id/editText_limit"
-    app:layout_constraintStart_toEndOf="@+id/editText_limit"
-    app:layout_constraintTop_toTopOf="@+id/editText_limit" />
+    <Button
+        android:id="@+id/btn_enter"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="24dp"
+        android:text="@string/Enter"
+        app:layout_constraintBottom_toBottomOf="@+id/editText_limit"
+        app:layout_constraintStart_toEndOf="@+id/editText_limit"
+        app:layout_constraintTop_toTopOf="@+id/editText_limit" />
 
     <RadioGroup
         android:id="@+id/radioGroup"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-       android:orientation="horizontal"
+        android:orientation="horizontal"
         app:layout_constraintBottom_toTopOf="@+id/btn_enter"
         app:layout_constraintStart_toStartOf="parent">
 
@@ -62,9 +63,9 @@ android:layout_height="match_parent">
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
+            android:padding="8dp"
             android:text="@string/Sort"
-            android:textColor="@color/black"
-            android:padding="8dp"/>
+            android:textColor="@color/black" />
 
         <RadioButton
             android:id="@+id/checkBox1"
@@ -81,6 +82,6 @@ android:layout_height="match_parent">
             android:text="name" />
     </RadioGroup>
     >
-         />
+    />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

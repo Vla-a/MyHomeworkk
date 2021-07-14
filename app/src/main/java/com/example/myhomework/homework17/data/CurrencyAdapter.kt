@@ -25,7 +25,7 @@ class CurrencyAdapter (
        holder.bind(currencyList[position])
     }
 
-    fun update(newCyrrencyList: List<Currency>) {
+    fun update(newCyrrencyList:MutableList<Currency>) {
         currencyList.clear()
         currencyList.addAll(newCyrrencyList)
         notifyDataSetChanged()
