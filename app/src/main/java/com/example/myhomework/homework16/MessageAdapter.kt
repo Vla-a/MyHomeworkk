@@ -2,31 +2,25 @@ package com.example.myhomework.homework16
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
+import androidx.recyclerview.widget.DiffUtil
+import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
 import com.example.myhomework.databinding.ItemMessageBinding
+import com.example.myhomework.homework17.data.Currency
 
 
 class MessageAdapter(
-    private val messageList: MutableList<Message>,
     private val clickListener: (Message) -> Unit
-) : RecyclerView.Adapter<MessageAdapter.MessageViewHolder>() {
+) : ListAdapter<Message, MessageAdapter.MessageViewHolder>(DiffUtilItemCallback()) {
 
-    override fun getItemCount(): Int = messageList.size
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MessageViewHolder =
         MessageViewHolder(
             ItemMessageBinding.inflate(LayoutInflater.from(parent.context)), clickListener
         )
 
-
     override fun onBindViewHolder(holder: MessageViewHolder, position: Int) {
-        holder.bind(messageList[position])
-    }
-
-    fun update(newMessageList: MutableList<Message>) {
-        messageList.clear()
-        messageList.addAll(newMessageList)
-        notifyDataSetChanged()
+        holder.bind(getItem(position))
     }
 
     class MessageViewHolder(
@@ -45,5 +39,16 @@ class MessageAdapter(
             }
         }
     }
+
+}
+class DiffUtilItemCallback: DiffUtil.ItemCallback<Message>(){
+    override fun areItemsTheSame(oldItem: Message, newItem: Message): Boolean {
+      return  oldItem == newItem
+    }
+
+    override fun areContentsTheSame(oldItem: Message, newItem: Message): Boolean {
+      return  oldItem.date == newItem.date && oldItem.message == newItem.message
+    }
+
 
 }

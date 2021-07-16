@@ -24,7 +24,8 @@ class HomeWork15Activity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
-        val messageAdapter = MessageAdapter(listMessage) { clickListener(it) }
+        val messageAdapter = MessageAdapter() {
+            clickListener(it) }
 
         binding = ActivityHomework15Binding.inflate(layoutInflater)
         setContentView(binding.root)
@@ -48,7 +49,7 @@ class HomeWork15Activity : AppCompatActivity() {
         binding.rvMessage?.adapter = messageAdapter
 
         myViewModel.messageListLiveData.observe(this, Observer {
-            messageAdapter.update(it as MutableList<Message>)
+            messageAdapter.submitList(it)
         })
 
         val horizontalDecoration =

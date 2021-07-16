@@ -10,6 +10,7 @@ import com.example.myhomework.homework17.restApi.CurrencyService
 import com.example.myhomework.sharedprefs.SharedPrefsKeys
 import com.example.myhomework.sharedprefs.SharedPrefsUtils
 
+
 class MySuperApp : Application() {
 
     private val messageDatabase: MessageDatabase by lazy {
@@ -25,9 +26,17 @@ class MySuperApp : Application() {
     override fun onCreate() {
         super.onCreate()
 
-
+//        startKoin {
+//            androidContext(this@MySuperApp)
+//            modules(listOf(repositoryModule))
+//        }
 
         SharedPrefsUtils.sharedPrefs =
             applicationContext.getSharedPreferences(SharedPrefsKeys.PREFS_KEY, MODE_PRIVATE)
     }
+
+//    private val repositoryModule = module {  //создаем репозитории
+//        factory { CurrencyRepository(get()) }
+//
+//    }
 }

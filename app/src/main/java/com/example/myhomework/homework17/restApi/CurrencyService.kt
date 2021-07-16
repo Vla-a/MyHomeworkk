@@ -8,6 +8,8 @@ import retrofit2.converter.gson.GsonConverterFactory
 object CurrencyService {
 
     private const val BASE_URL = "https://pro-api.coinmarketcap.com/"
+    const val DEFAULT_LIMIT = 10
+    const val NAME = "name"
 
     private fun getRetrofit() = Retrofit.Builder()
         .baseUrl(BASE_URL)

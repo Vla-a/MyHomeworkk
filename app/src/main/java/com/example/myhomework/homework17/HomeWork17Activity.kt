@@ -34,13 +34,15 @@ class HomeWork17Activity : AppCompatActivity() {
             layoutManager = LinearLayoutManager(this@HomeWork17Activity)
         }
 
+        myViewModel.currencyLiveData.observe(this, {
+            it?.let {
+                currencyAdapter.update(it)
+            }
+        })
+
         binding.btnEnter.setOnClickListener {
 
-            myViewModel.currencyLiveData.observe(this, {
-                it?.let {
-                    currencyAdapter.update(it)
-                }
-            })
+
 
             sortName = if (binding.checkBox2.isChecked) {
                binding.checkBox2.text.toString()

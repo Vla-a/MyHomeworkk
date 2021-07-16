@@ -9,7 +9,10 @@ class CurrencyRepository(
 ) {
 
 
-  suspend  fun getCurrenciesList(limit: Int, name: String): MutableList<Currency> {
+  suspend  fun getCurrenciesList(
+      limit: Int = CurrencyService.DEFAULT_LIMIT,
+      name: String = CurrencyService.NAME
+  ): MutableList<Currency> {
 
    return  withContext(Dispatchers.IO) {
        currencyApi.getCurrencyList( limit, name).data.map {
