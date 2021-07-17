@@ -16,7 +16,7 @@ class HomeWork15Activity : AppCompatActivity() {
 
     private var listMessage: MutableList<Message> = mutableListOf()
     private lateinit var binding: ActivityHomework15Binding
-    private val myViewModel: HomeWork15ViewModel by viewModels {
+    private val viewModels: HomeWork15ViewModel by viewModels {
         HomeWork15ViewModelFactory((application as MySuperApp).messageRepository)
     }
 
@@ -33,7 +33,7 @@ class HomeWork15Activity : AppCompatActivity() {
         binding.btnMessage.setOnClickListener {
 
             with(binding.editTextMessage) {
-                myViewModel.addMessageToDatabase(text.toString())
+                viewModels.addMessageToDatabase(text.toString())
                 setText("")
             }
 
@@ -48,7 +48,7 @@ class HomeWork15Activity : AppCompatActivity() {
             LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false)
         binding.rvMessage?.adapter = messageAdapter
 
-        myViewModel.messageListLiveData.observe(this, Observer {
+        viewModels.messageListLiveData.observe(this, Observer {
             messageAdapter.submitList(it)
         })
 
@@ -60,6 +60,6 @@ class HomeWork15Activity : AppCompatActivity() {
 
     fun clickListener(message: Message) {
 
-        myViewModel.deleteMessage(message)
+        viewModels.deleteMessage(message)
     }
 }
