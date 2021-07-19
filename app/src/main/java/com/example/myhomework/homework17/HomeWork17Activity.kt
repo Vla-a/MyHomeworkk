@@ -11,14 +11,15 @@ import com.example.myhomework.MySuperApp
 import com.example.myhomework.databinding.ActivityHomework17Binding
 import com.example.myhomework.homework17.data.Currency
 import com.example.myhomework.homework17.data.CurrencyAdapter
+import org.koin.android.viewmodel.ext.android.viewModel
 
 
 class HomeWork17Activity : AppCompatActivity() {
 
     private lateinit var binding: ActivityHomework17Binding
-    private val myViewModel: Homework17ViewModel by viewModels {
-        HomeWork17ViewModelFactory((application as MySuperApp).currencyRepository)
-    }
+    private val myViewModel: Homework17ViewModel by viewModel()
+//        HomeWork17ViewModelFactory((application as MySuperApp).currencyRepository)
+//    }
 
     private val currencyAdapter: CurrencyAdapter = CurrencyAdapter()
     private lateinit var sortName: String

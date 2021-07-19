@@ -2,18 +2,18 @@ package com.example.myhomework.homework17
 
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
-import androidx.lifecycle.ViewModelProvider
 import androidx.lifecycle.viewModelScope
-import com.example.myhomework.homework10.SaveSweetsList
 import com.example.myhomework.homework17.data.Currency
 import com.example.myhomework.homework17.restApi.CurrencyRepository
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
+import org.koin.core.component.KoinComponent
 
 
 class Homework17ViewModel(
     private val currencyRepository: CurrencyRepository
 ) : ViewModel() {
+
 
     val currencyLiveData: MutableLiveData<MutableList<Currency>> = MutableLiveData()
 
@@ -35,10 +35,10 @@ class Homework17ViewModel(
 
 }
 
-class HomeWork17ViewModelFactory(
-    private val currencyRepository: CurrencyRepository
-) : ViewModelProvider.Factory {
-    override fun <T : ViewModel?> create(modelClass: Class<T>): T {
-        return Homework17ViewModel(currencyRepository) as T
-    }
-}
+//class HomeWork17ViewModelFactory(
+//    private val currencyRepository: CurrencyRepository
+//) : ViewModelProvider.Factory {
+//    override fun <T : ViewModel?> create(modelClass: Class<T>): T {
+//        return Homework17ViewModel(currencyRepository) as T
+//    }
+//}

@@ -7,9 +7,9 @@ import androidx.core.os.bundleOf
 import com.example.myhomework.R
 import com.example.myhomework.databinding.ActivityHomework13Binding
 import com.example.myhomework.homework10.Sweets
-import com.example.myhomework.sharedprefs.SharedPrefsKeys.PREFS_BRAND_KEY
-import com.example.myhomework.sharedprefs.SharedPrefsKeys.PREFS_CODE_KEY
-import com.example.myhomework.sharedprefs.SharedPrefsUtils
+import com.example.myhomework.homework13.sharedprefs.SharedPrefsKeys.PREFS_BRAND_KEY
+import com.example.myhomework.homework13.sharedprefs.SharedPrefsKeys.PREFS_CODE_KEY
+import com.example.myhomework.homework13.sharedprefs.SharedPrefsUtils
 
 
 @Suppress("DEPRECATION")
