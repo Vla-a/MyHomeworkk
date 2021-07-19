@@ -10,15 +10,16 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.myhomework.MySuperApp
 import com.example.myhomework.R
 import com.example.myhomework.databinding.ActivityHomework15Binding
+import org.koin.androidx.viewmodel.ext.android.viewModel
 
 
 class HomeWork15Activity : AppCompatActivity() {
 
     private var listMessage: MutableList<Message> = mutableListOf()
     private lateinit var binding: ActivityHomework15Binding
-    private val viewModels: HomeWork15ViewModel by viewModels {
-        HomeWork15ViewModelFactory((application as MySuperApp).messageRepository)
-    }
+    private val viewModels: HomeWork15ViewModel by viewModel()
+//        HomeWork15ViewModelFactory((application as MySuperApp).messageRepository)
+//    }
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -52,6 +53,7 @@ class HomeWork15Activity : AppCompatActivity() {
             messageAdapter.submitList(it)
         })
 
+//        Создание раздилительной полоски
         val horizontalDecoration =
             DividerItemDecoration(this, DividerItemDecoration.VERTICAL)
         horizontalDecoration.setDrawable(ContextCompat.getDrawable(this, R.drawable.line_divider)!!)
