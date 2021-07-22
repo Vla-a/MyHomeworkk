@@ -2,6 +2,8 @@ package com.example.myhomework.homework7
 
 
 import android.content.Intent
+import android.media.Ringtone
+import android.media.RingtoneManager
 import android.os.Bundle
 import android.view.View
 import androidx.appcompat.app.AppCompatActivity
@@ -13,6 +15,7 @@ class HomeWork7Activity : AppCompatActivity() {
 
     private lateinit var binding: ActivityHomework7Binding
     private var counter = 10
+    private var rington: Ringtone? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -20,6 +23,17 @@ class HomeWork7Activity : AppCompatActivity() {
         setContentView(binding.root)
 
         binding.bCliK?.setOnClickListener {
+
+            val notificUri = RingtoneManager.getDefaultUri(RingtoneManager.TYPE_ALARM)
+            rington = RingtoneManager.getRingtone(this, notificUri)
+            if (rington == null) {
+                val notificUri = RingtoneManager.getDefaultUri(RingtoneManager.TYPE_ALARM)
+                rington = RingtoneManager.getRingtone(this, notificUri)
+            }
+            if (rington != null) {
+                rington?.play()
+            }
+
             binding.tvTextView?.text = (counter - 1).toString()
             counter--
             if (counter <= 0) {
@@ -49,6 +63,11 @@ class HomeWork7Activity : AppCompatActivity() {
     override fun onSaveInstanceState(outState: Bundle) {
         outState.putInt(TIMER, counter)
         super.onSaveInstanceState(outState)
+    }
+
+    override fun onDestroy() {
+        super.onDestroy()
+        rington?.stop()
     }
 
     companion object {

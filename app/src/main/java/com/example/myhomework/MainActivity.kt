@@ -5,6 +5,7 @@ import android.os.Bundle
 import android.view.View
 import android.widget.Button
 import androidx.appcompat.app.AppCompatActivity
+import com.example.myhomework.alarmсlock.AlarmClockActivity
 import com.example.myhomework.homework10.HomeWork10Activity
 import com.example.myhomework.homework12.HomeWork12Activity
 import com.example.myhomework.homework13.HomeWork13Activity
@@ -23,6 +24,7 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
     private lateinit var button13: Button
     private lateinit var button15: Button
     private lateinit var button17: Button
+    private lateinit var button18: Button
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -62,6 +64,11 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
         button17 = findViewById(R.id.button17)
         button17.setOnClickListener {
             startActivity(Intent(this, HomeWork17Activity::class.java))
+        }
+
+        button18 = findViewById(R.id.button18)
+        button18.setOnClickListener {
+            startActivity(Intent(this, AlarmClockActivity::class.java))
         }
 
 //        SixCars.createCar()

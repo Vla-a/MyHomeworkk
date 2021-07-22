@@ -17,4 +17,7 @@
     <string name="Enter">Enter</string>
     <string name="Sort">SORT:</string>
     <string name="Limit">Enter limit:</string>
+    <string name="AlarmClock">Alarm Clock</string>
+    <string name="STOP">STOP</string>
+    <string name="START">START</string>
 </resources>
