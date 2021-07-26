@@ -1,9 +1,6 @@
 package com.example.myhomework.alarmсlock
 
-import android.app.Notification
-import android.app.NotificationChannel
-import android.app.NotificationManager
-import android.app.PendingIntent
+import android.app.*
 import android.content.BroadcastReceiver
 import android.content.Context
 import android.content.Intent
@@ -12,15 +9,19 @@ import android.os.Build
 import androidx.annotation.RequiresApi
 import androidx.core.app.NotificationCompat
 import com.example.myhomework.R
+import kotlinx.serialization.json.Json.Default.context
 
 
 class NotificationBroadcast : BroadcastReceiver() {
 
+    lateinit var  mp: MediaPlayer
+
     override fun onReceive(context: Context, intent: Intent) {
 
         //player
-        val mp: MediaPlayer = MediaPlayer.create(context, R.raw.burito)
+         mp = MediaPlayer.create(context, R.raw.burito)
         mp.start()
+
         // notification
         try {
             val contentIntent = PendingIntent.getActivity(
@@ -63,6 +64,7 @@ class NotificationBroadcast : BroadcastReceiver() {
             )
             notificationManager.createNotificationChannel(channel)
         }
+
     }
     companion object {
 

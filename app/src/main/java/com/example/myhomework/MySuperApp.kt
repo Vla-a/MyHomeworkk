@@ -10,6 +10,11 @@ import com.example.myhomework.homework17.restApi.CurrencyRepository
 import com.example.myhomework.homework17.restApi.CurrencyService
 import com.example.myhomework.homework13.sharedprefs.SharedPrefsKeys
 import com.example.myhomework.homework13.sharedprefs.SharedPrefsUtils
+import com.example.myhomework.widget.SharedPrefsLocationUtils
+import com.example.myhomework.widget.WeatherActivity
+import com.example.myhomework.widget.WeatherViewModel
+import com.example.myhomework.widget.restAPI.WeatherRepository
+import com.example.myhomework.widget.restAPI.WeatherService
 import org.koin.android.ext.koin.androidContext
 import org.koin.android.viewmodel.dsl.viewModel
 import org.koin.core.context.startKoin
@@ -30,11 +35,17 @@ class MySuperApp : Application() {
 //        CurrencyRepository(CurrencyService.getCurrencyService())
 //    }
 
+
+
     override fun onCreate() {
         super.onCreate()
 
         SharedPrefsUtils.sharedPrefs =
             applicationContext.getSharedPreferences(SharedPrefsKeys.PREFS_KEY, MODE_PRIVATE)
+
+        SharedPrefsLocationUtils.sharedPrefs =
+            applicationContext.getSharedPreferences(SharedPrefsLocationUtils.PREFS_KEY,
+                MODE_PRIVATE)
 
         startKoin {
             androidContext(this@MySuperApp)
@@ -45,15 +56,18 @@ class MySuperApp : Application() {
     private val viewModels = module {
         viewModel { Homework17ViewModel(get()) }
         viewModel { HomeWork15ViewModel(get()) }
+        viewModel { WeatherViewModel(get()) }
     }
 
     private val repositoryModule = module {  //создаем репозитории
         factory { CurrencyRepository(get()) }
         factory { MessageRepository(get()) }
+        factory { WeatherRepository(get()) }
     }
 
     private val currencyApi = module {
         factory { CurrencyService.getCurrencyService() }
+        factory { WeatherService.getWeatherService() }
     }
 
     private val storageModule = module {

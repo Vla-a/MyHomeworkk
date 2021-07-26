@@ -103,7 +103,7 @@ class AlarmClockActivity : AppCompatActivity() {
         val timText = "будила поставлена на: ${binding.timePicker.currentHour}:${min}, ${
             binding.calendarView.dayOfMonth
         }.${binding.calendarView.month}.${binding.calendarView.year}"
-        binding.tvTex.setText(timText)
+        binding.tvTex.text = timText
     }
 }
 

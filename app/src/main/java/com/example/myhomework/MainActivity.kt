@@ -13,6 +13,7 @@ import com.example.myhomework.homework16.HomeWork15Activity
 import com.example.myhomework.homework17.HomeWork17Activity
 import com.example.myhomework.homework6.HomeWork6Activity
 import com.example.myhomework.homework7.HomeWork7Activity
+import com.example.myhomework.widget.WeatherActivity
 
 
 class MainActivity : AppCompatActivity(), View.OnClickListener {
@@ -34,7 +35,7 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
         button6 = findViewById(R.id.button6)
         button6.setOnClickListener {
 
-            val intent = Intent(this, HomeWork6Activity::class.java)
+            val intent = Intent(this, WeatherActivity::class.java)
             startActivity(intent)
         }
         button7 = findViewById(R.id.button7)
