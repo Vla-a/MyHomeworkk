@@ -3,7 +3,6 @@ package com.example.myhomework.homework20
 import android.app.Service
 import android.content.Intent
 import android.os.IBinder
-import android.util.Log
 import com.example.myhomework.homework20.restApi.WeatherRepository
 import kotlinx.coroutines.runBlocking
 import org.koin.android.ext.android.inject
@@ -17,7 +16,6 @@ class UpdateWeatherWidgetService : Service() {
 
     override fun onStartCommand(intent: Intent?, flags: Int, startId: Int): Int {
 
-        Log.i("KEK", "In UpdateWeatherService")
 
         val cityName = SharedPrefsLocationUtils.getLocation()
         if (cityName == null) {

@@ -7,22 +7,22 @@ import com.example.myhomework.databinding.ActivityWeatherLocationBinding
 import org.koin.android.viewmodel.ext.android.viewModel
 
 class WeatherLocationActivity : AppCompatActivity() {
-    private lateinit var viewBinding: ActivityWeatherLocationBinding
+    private lateinit var binding: ActivityWeatherLocationBinding
     private val viewModel: WeatherViewModel by viewModel()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        viewBinding = ActivityWeatherLocationBinding.inflate(layoutInflater)
-        setContentView(viewBinding.root)
+        binding = ActivityWeatherLocationBinding.inflate(layoutInflater)
+        setContentView(binding.root)
 
-        viewBinding.btnConfirmLocation.setOnClickListener {
-            val city = viewBinding.etLocation.text.toString()
+        binding.btnConfirmLocation.setOnClickListener {
+            val city = binding.etLocation.text.toString()
             if (viewModel.hasCity(city)) {
                 viewModel.saveCity(city)
                 this.finish()
             } else {
                 Toast.makeText(this, "No such City", Toast.LENGTH_SHORT).show()
-                viewBinding.etLocation.text.clear()
+                binding.etLocation.text.clear()
             }
         }
     }

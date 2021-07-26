@@ -31,8 +31,6 @@ class WeatherWidget : AppWidgetProvider() {
     override fun onReceive(context: Context, intent: Intent?) {
         super.onReceive(context, intent)
 
-        Log.i("KEK", "In onReceive() with ${intent?.action}")
-
         val remoteViews = RemoteViews(context.packageName, R.layout.widget_weather)
 
         when (intent?.action) {
@@ -52,7 +50,6 @@ class WeatherWidget : AppWidgetProvider() {
         val serviceIntent = Intent(context, UpdateWeatherWidgetService::class.java)
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
 
-            Log.i("KEK", "Trying to start ForegroundService")
 
             context.startForegroundService(serviceIntent)
         } else {
