@@ -11,9 +11,10 @@ import com.example.myhomework.homework12.HomeWork12Activity
 import com.example.myhomework.homework13.HomeWork13Activity
 import com.example.myhomework.homework16.HomeWork15Activity
 import com.example.myhomework.homework17.HomeWork17Activity
+import com.example.myhomework.homework20.WeatherLocationActivity
 import com.example.myhomework.homework6.HomeWork6Activity
 import com.example.myhomework.homework7.HomeWork7Activity
-import com.example.myhomework.widget.WeatherActivity
+
 
 
 class MainActivity : AppCompatActivity(), View.OnClickListener {
@@ -26,6 +27,7 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
     private lateinit var button15: Button
     private lateinit var button17: Button
     private lateinit var button18: Button
+    private lateinit var button20: Button
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -35,7 +37,7 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
         button6 = findViewById(R.id.button6)
         button6.setOnClickListener {
 
-            val intent = Intent(this, WeatherActivity::class.java)
+            val intent = Intent(this, HomeWork6Activity::class.java)
             startActivity(intent)
         }
         button7 = findViewById(R.id.button7)
@@ -70,6 +72,12 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
         button18 = findViewById(R.id.button18)
         button18.setOnClickListener {
             startActivity(Intent(this, AlarmClockActivity::class.java))
+        }
+        button20 = findViewById(R.id.button20)
+        button20.setOnClickListener {
+
+            val intent = Intent(this, WeatherLocationActivity::class.java)
+            startActivity(intent)
         }
 
 //        SixCars.createCar()

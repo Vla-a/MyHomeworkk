@@ -1,11 +1,9 @@
-package com.example.myhomework.widget.data
-
-
+package com.example.myhomework.homework20.data
 
 import android.os.Parcel
 import android.os.Parcelable
 
-data class MyWeather(
+data class Weather(
     val temperature: String,
     val description: String,
     val windSpeed: String,
@@ -32,12 +30,12 @@ data class MyWeather(
         return 0
     }
 
-    companion object CREATOR : Parcelable.Creator<MyWeather> {
-        override fun createFromParcel(parcel: Parcel): MyWeather {
-            return MyWeather(parcel)
+    companion object CREATOR : Parcelable.Creator<Weather> {
+        override fun createFromParcel(parcel: Parcel): Weather {
+            return Weather(parcel)
         }
 
-        override fun newArray(size: Int): Array<MyWeather?> {
+        override fun newArray(size: Int): Array<Weather?> {
             return arrayOfNulls(size)
         }
     }

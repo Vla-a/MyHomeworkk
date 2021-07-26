@@ -1,16 +1,15 @@
-package com.example.myhomework.widget
-
+package com.example.myhomework.homework20
 
 import android.app.Service
 import android.content.Intent
 import android.os.IBinder
 import android.util.Log
-import com.example.myhomework.widget.restAPI.WeatherRepository
+import com.example.myhomework.homework20.restApi.WeatherRepository
 import kotlinx.coroutines.runBlocking
 import org.koin.android.ext.android.inject
 
 
-class UpdateWeatherService : Service() {
+class UpdateWeatherWidgetService : Service() {
 
     private val weatherRepository: WeatherRepository by inject()
 
@@ -20,9 +19,9 @@ class UpdateWeatherService : Service() {
 
         Log.i("KEK", "In UpdateWeatherService")
 
-      val cityName = SharedPrefsLocationUtils.getLocation()
+        val cityName = SharedPrefsLocationUtils.getLocation()
         if (cityName == null) {
-            val activityStartIntent = Intent(this, WeatherActivity::class.java)
+            val activityStartIntent = Intent(this, WeatherLocationActivity::class.java)
             activityStartIntent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK)
             startActivity(activityStartIntent)
             stopSelf()
@@ -38,4 +37,3 @@ class UpdateWeatherService : Service() {
         return START_NOT_STICKY
     }
 }
-

@@ -1,4 +1,4 @@
-package com.example.myhomework.widget
+package com.example.myhomework.homework20
 
 import android.content.SharedPreferences
 

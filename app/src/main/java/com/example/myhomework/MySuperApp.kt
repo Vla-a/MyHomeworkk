@@ -10,11 +10,11 @@ import com.example.myhomework.homework17.restApi.CurrencyRepository
 import com.example.myhomework.homework17.restApi.CurrencyService
 import com.example.myhomework.homework13.sharedprefs.SharedPrefsKeys
 import com.example.myhomework.homework13.sharedprefs.SharedPrefsUtils
-import com.example.myhomework.widget.SharedPrefsLocationUtils
-import com.example.myhomework.widget.WeatherActivity
-import com.example.myhomework.widget.WeatherViewModel
-import com.example.myhomework.widget.restAPI.WeatherRepository
-import com.example.myhomework.widget.restAPI.WeatherService
+import com.example.myhomework.homework20.SharedPrefsLocationUtils
+import com.example.myhomework.homework20.UpdateWeatherWidgetService
+import com.example.myhomework.homework20.WeatherViewModel
+import com.example.myhomework.homework20.restApi.WeatherApiService
+import com.example.myhomework.homework20.restApi.WeatherRepository
 import org.koin.android.ext.koin.androidContext
 import org.koin.android.viewmodel.dsl.viewModel
 import org.koin.core.context.startKoin
@@ -67,7 +67,7 @@ class MySuperApp : Application() {
 
     private val currencyApi = module {
         factory { CurrencyService.getCurrencyService() }
-        factory { WeatherService.getWeatherService() }
+        factory { WeatherApiService.getWeatherService() }
     }
 
     private val storageModule = module {

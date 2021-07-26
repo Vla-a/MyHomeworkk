@@ -1,19 +1,19 @@
-package com.example.myhomework.widget.restAPI
+package com.example.myhomework.homework20.restApi
 
-import com.example.myhomework.widget.data.MyWeather
-import com.example.myhomework.widget.entities.WeaterGeneral
+import com.example.myhomework.homework20.data.Weather
+import com.example.myhomework.homework20.entities.WeatherResponseEntity
 import kotlin.math.roundToInt
 
-class WeatherRepository (private val weatherApi: WeatherApi) {
+class WeatherRepository(private val weatherApi: WeatherApi) {
 
-    suspend fun getWeather(cityName: String): MyWeather? =
+    suspend fun getWeather(cityName: String): Weather? =
         weatherApi.getWeather(cityName).body()?.toWeather()
 
     suspend fun hasCity(cityName: String): Boolean = weatherApi.getWeather(cityName).isSuccessful
 
-    private fun WeaterGeneral.toWeather(): MyWeather {
+    private fun WeatherResponseEntity.toWeather(): Weather {
         val temperature = this.main.temp.roundToInt()
-        return MyWeather(
+        return Weather(
             StringBuilder().append(if (temperature >= 0) "+" else "")
                 .append(temperature)
                 .append("\u2103")

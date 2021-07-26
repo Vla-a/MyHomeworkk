@@ -1,4 +1,4 @@
-package com.example.myhomework.widget
+package com.example.myhomework.homework20
 
 import android.app.PendingIntent
 import android.appwidget.AppWidgetManager
@@ -10,10 +10,7 @@ import android.os.Build
 import android.util.Log
 import android.widget.RemoteViews
 import com.example.myhomework.R
-import com.example.myhomework.widget.data.MyWeather
-import com.example.myhomework.widget.entities.Weather
-import java.text.SimpleDateFormat
-import java.util.*
+import com.example.myhomework.homework20.data.Weather
 
 
 class WeatherWidget : AppWidgetProvider() {
@@ -49,11 +46,10 @@ class WeatherWidget : AppWidgetProvider() {
         val componentWidget = ComponentName(context, javaClass)
         val ids = appWidgetManager.getAppWidgetIds(componentWidget)
         appWidgetManager.updateAppWidget(ids, remoteViews)
-
     }
 
     private fun refresh(context: Context) {
-        val serviceIntent = Intent(context, UpdateWeatherService::class.java)
+        val serviceIntent = Intent(context, UpdateWeatherWidgetService::class.java)
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
 
             Log.i("KEK", "Trying to start ForegroundService")
@@ -65,7 +61,7 @@ class WeatherWidget : AppWidgetProvider() {
     }
 
     private fun setNewWeather(remoteViews: RemoteViews, intent: Intent?) {
-        val weather = intent?.getParcelableExtra<MyWeather>(WEATHER_EXTRA_KEY)
+        val weather = intent?.getParcelableExtra<Weather>(WEATHER_EXTRA_KEY)
         with(remoteViews) {
             setTextViewText(R.id.tv_temperature, weather?.temperature)
             setTextViewText(R.id.tv_city, weather?.cityName)
@@ -84,6 +80,7 @@ class WeatherWidget : AppWidgetProvider() {
     companion object {
         const val REFRESH = "REFRESH"
         const val UPDATE = "UPDATE"
+
         const val WEATHER_EXTRA_KEY = "WEATHER_EXTRA_KEY"
     }
 }
