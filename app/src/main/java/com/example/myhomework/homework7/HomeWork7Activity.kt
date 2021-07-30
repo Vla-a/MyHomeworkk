@@ -24,6 +24,7 @@ class HomeWork7Activity : AppCompatActivity() {
 
         binding.bCliK?.setOnClickListener {
 
+            //рингтон
             val notificUri = RingtoneManager.getDefaultUri(RingtoneManager.TYPE_ALARM)
             rington = RingtoneManager.getRingtone(this, notificUri)
             if (rington == null) {

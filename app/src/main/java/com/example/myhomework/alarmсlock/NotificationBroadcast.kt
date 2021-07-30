@@ -37,7 +37,7 @@ class NotificationBroadcast : BroadcastReceiver() {
             }
 
             val builder = NotificationCompat.Builder(context, NOTIFICATION_CHANNEL)
-                .setSmallIcon(R.mipmap.ic_launcher_round)
+                .setSmallIcon(R.drawable.ic_baseline_access_alarm_24)
                 .setContentTitle("Hi, Владимир!")
                 .setContentText("Пора вставать!!!")
                 .setContentIntent(contentIntent)

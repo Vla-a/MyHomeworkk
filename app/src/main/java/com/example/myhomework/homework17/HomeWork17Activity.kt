@@ -1,15 +1,9 @@
 package com.example.myhomework.homework17
 
-import android.content.Intent
 import android.os.Bundle
-import android.util.Log
-import android.view.View
-import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.example.myhomework.MySuperApp
 import com.example.myhomework.databinding.ActivityHomework17Binding
-import com.example.myhomework.homework17.data.Currency
 import com.example.myhomework.homework17.data.CurrencyAdapter
 import org.koin.android.viewmodel.ext.android.viewModel
 

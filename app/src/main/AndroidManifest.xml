@@ -48,10 +48,12 @@
         <service
             android:name=".alarmсlock.AnotherService"
             android:enabled="true"
-            android:exported="true"></service>
+            android:exported="true"/>
         <service android:name=".homework20.UpdateWeatherWidgetService" />
 
-        <receiver android:name=".alarmсlock.NotificationBroadcast" />
+        <receiver android:name=".alarmсlock.NotificationBroadcast"
+            android:enabled="true"
+            android:exported="true"/>
     </application>
 
 </manifest>

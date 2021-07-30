@@ -1,6 +1,7 @@
 package com.example.myhomework
 
 import android.app.Application
+import androidx.room.Room
 import com.example.myhomework.homework16.HomeWork15ViewModel
 import com.example.myhomework.homework16.database.DatabaseConstructor
 import com.example.myhomework.homework16.database.MessageDatabase
@@ -10,6 +11,7 @@ import com.example.myhomework.homework17.restApi.CurrencyRepository
 import com.example.myhomework.homework17.restApi.CurrencyService
 import com.example.myhomework.homework13.sharedprefs.SharedPrefsKeys
 import com.example.myhomework.homework13.sharedprefs.SharedPrefsUtils
+import com.example.myhomework.homework16.database.MessageDao
 import com.example.myhomework.homework20.SharedPrefsLocationUtils
 import com.example.myhomework.homework20.UpdateWeatherWidgetService
 import com.example.myhomework.homework20.WeatherViewModel
@@ -24,13 +26,13 @@ import org.koin.dsl.module
 class MySuperApp : Application() {
 
 //    OLD
-//    private val messageDatabase: MessageDatabase by lazy {
-//        Room.databaseBuilder(this, MessageDatabase::class.java, "message_database").build()
-//    }
-//    private val messageDao: MessageDao by lazy { messageDatabase.MessageDao() }
-//
-//    val messageRepository: MessageRepository by lazy { MessageRepository(messageDao) }
-//
+    private val messageDatabase: MessageDatabase by lazy {
+        Room.databaseBuilder(this, MessageDatabase::class.java, "message_database").build()
+    }
+    private val messageDao: MessageDao by lazy { messageDatabase.MessageDao() }
+
+    val messageRepository: MessageRepository by lazy { MessageRepository(messageDao) }
+
 //    val currencyRepository: CurrencyRepository by lazy {
 //        CurrencyRepository(CurrencyService.getCurrencyService())
 //    }
