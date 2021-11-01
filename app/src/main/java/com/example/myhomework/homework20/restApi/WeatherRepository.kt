@@ -30,7 +30,10 @@ class WeatherRepository(private val weatherApi: WeatherApi) {
                 in 293..337 -> "NW"
                 else -> "N"
             },
-            this.name
+            this.name,
+
+            this.main.tempMin.toString(),
+            this.main.tempMax.toString()
         )
     }
 }

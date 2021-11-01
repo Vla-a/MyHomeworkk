@@ -6,6 +6,7 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.myhomework.databinding.ActivityHomework17Binding
 import com.example.myhomework.homework17.data.CurrencyAdapter
 import org.koin.android.viewmodel.ext.android.viewModel
+import java.util.*
 
 
 class HomeWork17Activity : AppCompatActivity() {
@@ -20,6 +21,7 @@ class HomeWork17Activity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+
 
         binding = ActivityHomework17Binding.inflate(layoutInflater)
         setContentView(binding.root)

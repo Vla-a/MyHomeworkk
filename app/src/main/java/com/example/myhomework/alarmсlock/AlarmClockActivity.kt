@@ -3,22 +3,49 @@ package com.example.myhomework.alarmсlock
 
 import android.app.AlarmManager
 import android.app.PendingIntent
-import android.content.Intent
 import android.os.Bundle
+import android.view.View
 import androidx.appcompat.app.AppCompatActivity
 import com.example.myhomework.databinding.ActivityAlarmClockBinding
 import java.util.*
+import android.app.Activity
+import androidx.annotation.Nullable
+import androidx.fragment.app.FragmentManager
+import android.R
+import android.content.*
+import android.widget.Button
+import android.widget.FrameLayout
+
+import android.widget.TextView
+import androidx.core.os.bundleOf
+import androidx.fragment.app.DialogFragment
+import com.example.myhomework.homework13.ItemSweetFragment
+import com.example.myhomework.homework13.MyFragmentSweetsCode
+import org.koin.experimental.builder.getArguments
+import java.lang.reflect.Array.newInstance
 
 
 class AlarmClockActivity : AppCompatActivity() {
 
+    private lateinit var singl: String
     private lateinit var binding: ActivityAlarmClockBinding
     var min: String? = ""
+
+
+    fun onReceive(intent: Intent?) {
+        val ss = intent?.getStringExtra("KEY_FROM_FRAGMENT")
+        binding.tvTex.text = ss
+
+    }
+
+
+    val filter = IntentFilter("BROADCAST_ACTION")
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
+        val myDialogFragment = MyDialogFragment()
         binding = ActivityAlarmClockBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
@@ -32,11 +59,29 @@ class AlarmClockActivity : AppCompatActivity() {
         }
 
         binding.btnStop.setOnClickListener {
-            alarmCancel()
+
+
+            val manager = supportFragmentManager
+            myDialogFragment.show(manager, "myDialog")
+
         }
+
+        onReceive(intent)
+
+
+            val s:String = chusSingl()
+            binding.tvTex.text = s
+
+
+
     }
 
     fun alarmStart(calendar: Calendar) {
+
+        val serviceIntent = Intent(this, AnotherService::class.java)
+        serviceIntent.putExtra("LOS", binding.tvTex.text)
+        startService(serviceIntent)
+
         val alarm = getSystemService(ALARM_SERVICE) as AlarmManager
         val myAnotherService = Intent(this, AnotherService::class.java)
         val pendingIntent = PendingIntent.getService(
@@ -70,7 +115,9 @@ class AlarmClockActivity : AppCompatActivity() {
         )
         alarm.cancel(pendingIntent)
 
-        val notifuBpouk = Intent(this, NotificationBroadcast::class.java)
+        val notifuBpouk = Intent(this, NotificationBroadcast::class.java).apply {
+
+        }
         val pendingIntent1 = PendingIntent.getBroadcast(
             applicationContext,
             1,
@@ -79,8 +126,14 @@ class AlarmClockActivity : AppCompatActivity() {
         )
         alarm.cancel(pendingIntent1)
 
-        binding.tvTex.text = "будила выключена"
+
+
+
+        sendMessage()
     }
+
+
+
 
     fun onTimeSet(view: Int, hourOfDay: Int, minute: Int) {
         val calendar = Calendar.getInstance()
@@ -93,7 +146,7 @@ class AlarmClockActivity : AppCompatActivity() {
         alarmStart(calendar)
     }
 
-    fun upDateTimeText() {
+    private fun upDateTimeText() {
 
         min = if (binding.timePicker.currentMinute < 10) {
             "0${binding.timePicker.currentMinute}"
@@ -105,6 +158,34 @@ class AlarmClockActivity : AppCompatActivity() {
         }.${binding.calendarView.month}.${binding.calendarView.year}"
         binding.tvTex.text = timText
     }
+
+    fun chusSingl(): String {
+
+        when {
+            binding.activityMainOnclicklistenerAnswer1.isChecked -> {
+                singl = "binding.activityMainOnclicklistenerAnswer1.text"
+            }
+            binding.activityMainOnclicklistenerAnswer2.isChecked -> {
+                singl = "binding.activityMainOnclicklistenerAnswer2.text"
+            }
+            binding.activityMainOnclicklistenerAnswer3.isChecked -> {
+                singl = "binding.activityMainOnclicklistenerAnswer3.text"
+            }
+
+        }
+        return singl
+    }
+
+    val WHERE_MY_CAT_ACTION = "ru.alexanderklimov.action.CAT"
+    val ALARM_MESSAGE = "Срочно пришлите кота!"
+
+    fun sendMessage() {
+        val intent = Intent()
+        intent.action = WHERE_MY_CAT_ACTION
+        intent.putExtra("ru.alexanderklimov.broadcast.Message", ALARM_MESSAGE)
+        intent.addFlags(Intent.FLAG_INCLUDE_STOPPED_PACKAGES)
+        sendBroadcast(intent)
+    }
+
+
 }
-
-

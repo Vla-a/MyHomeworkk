@@ -8,9 +8,13 @@ data class Weather(
     val description: String,
     val windSpeed: String,
     val windDirection: String,
-    val cityName: String
+    val cityName: String,
+    val tempMin: String,
+    val tempMax: String,
 ) : Parcelable {
     constructor(parcel: Parcel) : this(
+        parcel.readString()!!,
+        parcel.readString()!!,
         parcel.readString()!!,
         parcel.readString()!!,
         parcel.readString()!!,
@@ -19,11 +23,13 @@ data class Weather(
     )
 
     override fun writeToParcel(parcel: Parcel, flags: Int) {
-        parcel.writeString(temperature)
+         parcel.writeString(temperature)
         parcel.writeString(description)
         parcel.writeString(windSpeed)
         parcel.writeString(windDirection)
         parcel.writeString(cityName)
+        parcel.writeString(tempMax)
+        parcel.writeString(tempMin)
     }
 
     override fun describeContents(): Int {

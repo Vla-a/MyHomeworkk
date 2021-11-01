@@ -5,6 +5,7 @@ package com.example.myhomework.homework17.restApi
 
 import com.example.myhomework.BuildConfig
 import com.example.myhomework.homework17.entities.CurrencyResponce
+import retrofit2.Response
 import retrofit2.http.GET
 import retrofit2.http.Headers
 import retrofit2.http.Query
@@ -16,5 +17,5 @@ interface CurrencyApi {
    suspend fun getCurrencyList(
       @Query("limit") limit: Int,
         @Query("sort") name: String
-   ): CurrencyResponce
+   ): Response<CurrencyResponce>
 }

@@ -2,10 +2,13 @@ package com.example.myhomework
 
 import android.content.Intent
 import android.os.Bundle
+import android.util.Log
 import android.view.View
 import android.widget.Button
 import androidx.appcompat.app.AppCompatActivity
 import com.example.myhomework.alarmсlock.AlarmClockActivity
+import com.example.myhomework.customview.CustomViewActivity
+import com.example.myhomework.galeryiaphoto.PhotoActivity
 import com.example.myhomework.homework10.HomeWork10Activity
 import com.example.myhomework.homework12.HomeWork12Activity
 import com.example.myhomework.homework13.HomeWork13Activity
@@ -16,8 +19,7 @@ import com.example.myhomework.homework6.HomeWork6Activity
 import com.example.myhomework.homework7.HomeWork7Activity
 
 
-
-class MainActivity : AppCompatActivity(), View.OnClickListener {
+class MainActivity : AppCompatActivity() {
 
     private lateinit var button6: Button
     private lateinit var button7: Button
@@ -28,6 +30,7 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
     private lateinit var button17: Button
     private lateinit var button18: Button
     private lateinit var button20: Button
+    private lateinit var button21: Button
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -80,6 +83,14 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
             startActivity(intent)
         }
 
+        button21 = findViewById(R.id.button21)
+        button21.setOnClickListener {
+
+//            val intent = Intent(this, CustomViewActivity::class.java)
+//            startActivity(intent)
+            val intent = Intent(this, PhotoActivity::class.java)
+            startActivity(intent)
+        }
 //        SixCars.createCar()
 //
 //        val bob = Dog("Bob", 43)
@@ -204,13 +215,81 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
 //        Log.e("fff", "onDestroy")
 //    }
     }
-
-    override fun onClick(v: View?) {
-        when (v?.id) {
-            R.id.button6 -> button6.setOnClickListener {
-                val intent = Intent(this, HomeWork6Activity::class.java)
-                startActivity(intent)
-            }
-        }
-    }
+//
+//    override fun onClick(v: View?) {
+//        when (v?.id) {
+//            R.id.button6 -> button6.setOnClickListener {
+//                val intent = Intent(this, HomeWork6Activity::class.java)
+//                startActivity(intent)
+//            }
+//        }
+//    }
 }
+
+//  fun main() {
+//
+//      // Создаем неизменяемую коллекцию, возвращаемое значение - Set
+//      var set = setOf("Java", "Kotlin", "Go")
+//      // Оценить, больше ли длина всех элементов 4
+//      println(set.all { it.length > 4 })
+//      // Определяем, больше ли длинных bean-компонентов любого элемента 4
+//      println(set.any { it.length > 4 })
+//      // Использование значения лямбда-выражения в качестве ключа и элемента коллекции в качестве значения для формирования коллекции Map
+//      val map = set.associateBy { "Учиться" + it + "Язык" }
+//      println(map)
+//
+//      println("Java" in set)
+//      println("Go" !in set)
+//
+//      // Возвращаемся в коллекцию после удаления первых двух элементов коллекции Set
+//      val dropedList = set.drop(2)
+//      println(dropedList)
+//
+//      // Элементы коллекции Filter Set: требуется, чтобы элементы коллекции содержали li
+//      val fliteredList = set.filter { "li" in it }
+//      println(fliteredList)
+//
+//      // Находим элемент, содержащий li, в коллекции Set, если найден, возвращаем элемент, иначе возвращаем null
+//      val foundStr1 = set.find { "li" in it }
+//      println(foundStr1)
+//
+//      // Находим все строки в коллекции Set, которые нужно соединить вместе
+//      val foldedList = set.fold("", { acc, e -> acc + e })
+//      println(foldedList)
+//
+//      // Находим, где появляется элемент
+//      println(set.indexOf("Go"))
+//
+//      // Сопоставляем каждый элемент набора с новым значением и возвращаем коллекцию Set, состоящую из всех новых значений
+//      val mappedList = set.map { "Учиться" + it + "Программирование" }
+//      println(mappedList)
+//
+//
+//      // Изменение порядка сбора
+//      val reversedList = set.reversed()
+//      println(reversedList)
+//
+//      val bSet = setOf("Lua", "Erlang", "Kotlin")
+//      // Вычислить пересечение двух наборов
+//      println(set intersect bSet)
+//      // Вычислить объединение двух наборов
+//      println(set union bSet)
+//      // Устанавливаем сложение, эквивалентное объединению
+//      println(set + bSet)
+//      // Устанавливаем вычитание, вычитаем общие элементы
+//      println(set - bSet)
+//}
+//
+//fun removeFillerWords(
+//    text: List<String>,
+//    vararg fillerWords: String): List<String> {
+//    val fillerWordSet = setOf(*fillerWords)
+//
+//    val res = mutableListOf<String>()
+//    for (word in text) {
+//        if (word !in fillerWordSet) {
+//            res += word
+//        }
+//    }
+//    return res
+//}

@@ -10,17 +10,24 @@ import androidx.annotation.RequiresApi
 import androidx.core.app.NotificationCompat
 import com.example.myhomework.R
 import kotlinx.serialization.json.Json.Default.context
+import java.util.*
+import kotlin.properties.Delegates
+import android.widget.Toast
+
+
+
 
 
 class NotificationBroadcast : BroadcastReceiver() {
 
-    lateinit var  mp: MediaPlayer
 
     override fun onReceive(context: Context, intent: Intent) {
 
-        //player
-         mp = MediaPlayer.create(context, R.raw.burito)
-        mp.start()
+        Toast.makeText(
+            context, "Обнаружено сообщение: " +
+                    intent.getStringExtra("ru.alexanderklimov.broadcast.Message"),
+            Toast.LENGTH_LONG
+        ).show()
 
         // notification
         try {

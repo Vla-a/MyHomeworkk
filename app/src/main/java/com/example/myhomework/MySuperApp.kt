@@ -1,7 +1,10 @@
 package com.example.myhomework
 
 import android.app.Application
-import androidx.room.Room
+import com.example.myhomework.homework13.sharedprefs.SharedPrefsKeys
+import com.example.myhomework.homework13.sharedprefs.SharedPrefsKeyss
+import com.example.myhomework.homework13.sharedprefs.SharedPrefsUtils
+import com.example.myhomework.homework13.sharedprefs.SharedPrefsUtilss
 import com.example.myhomework.homework16.HomeWork15ViewModel
 import com.example.myhomework.homework16.database.DatabaseConstructor
 import com.example.myhomework.homework16.database.MessageDatabase
@@ -9,30 +12,29 @@ import com.example.myhomework.homework16.database.MessageRepository
 import com.example.myhomework.homework17.Homework17ViewModel
 import com.example.myhomework.homework17.restApi.CurrencyRepository
 import com.example.myhomework.homework17.restApi.CurrencyService
-import com.example.myhomework.homework13.sharedprefs.SharedPrefsKeys
-import com.example.myhomework.homework13.sharedprefs.SharedPrefsUtils
-import com.example.myhomework.homework16.database.MessageDao
 import com.example.myhomework.homework20.SharedPrefsLocationUtils
-import com.example.myhomework.homework20.UpdateWeatherWidgetService
 import com.example.myhomework.homework20.WeatherViewModel
 import com.example.myhomework.homework20.restApi.WeatherApiService
 import com.example.myhomework.homework20.restApi.WeatherRepository
 import org.koin.android.ext.koin.androidContext
 import org.koin.android.viewmodel.dsl.viewModel
+import org.koin.core.component.KoinApiExtension
+import org.koin.core.component.KoinComponent
 import org.koin.core.context.startKoin
 import org.koin.dsl.module
 
+@KoinApiExtension
+class MySuperApp : Application(), KoinComponent {
 
-class MySuperApp : Application() {
 
 //    OLD
-    private val messageDatabase: MessageDatabase by lazy {
-        Room.databaseBuilder(this, MessageDatabase::class.java, "message_database").build()
-    }
-    private val messageDao: MessageDao by lazy { messageDatabase.MessageDao() }
-
-    val messageRepository: MessageRepository by lazy { MessageRepository(messageDao) }
-
+//    private val messageDatabase: MessageDatabase by lazy {
+//        Room.databaseBuilder(this, MessageDatabase::class.java, "message_database").build()
+//    }
+//    private val messageDao: MessageDao by lazy { messageDatabase.MessageDao() }
+//
+//    val messageRepository: MessageRepository by lazy { MessageRepository(messageDao) }
+//
 //    val currencyRepository: CurrencyRepository by lazy {
 //        CurrencyRepository(CurrencyService.getCurrencyService())
 //    }
@@ -44,6 +46,9 @@ class MySuperApp : Application() {
 
         SharedPrefsUtils.sharedPrefs =
             applicationContext.getSharedPreferences(SharedPrefsKeys.PREFS_KEY, MODE_PRIVATE)
+
+        SharedPrefsUtilss.sharedPrefs =
+            applicationContext.getSharedPreferences(SharedPrefsKeyss.KEY, MODE_PRIVATE)
 
         SharedPrefsLocationUtils.sharedPrefs =
             applicationContext.getSharedPreferences(SharedPrefsLocationUtils.PREFS_KEY,

@@ -65,6 +65,9 @@ class WeatherWidget : AppWidgetProvider() {
             setTextViewText(R.id.tv_weather, weather?.description)
             setTextViewText(R.id.tv_wind_speed, weather?.windSpeed)
             setTextViewText(R.id.tv_wind_direction, weather?.windDirection)
+
+            setTextViewText(R.id.tv_max,"TempMax ${weather?.tempMax}")
+            setTextViewText(R.id.tv_min, "TempMin ${weather?.tempMin}")
         }
     }
 

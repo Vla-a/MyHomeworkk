@@ -10,13 +10,17 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.myhomework.MySuperApp
 import com.example.myhomework.R
 import com.example.myhomework.databinding.ActivityHomework15Binding
-import org.koin.androidx.viewmodel.ext.android.viewModel
+import dagger.hilt.android.AndroidEntryPoint
+import org.koin.android.viewmodel.ext.android.viewModel
+import javax.inject.Inject
+
 
 
 class HomeWork15Activity : AppCompatActivity() {
 
     private var listMessage: MutableList<Message> = mutableListOf()
     private lateinit var binding: ActivityHomework15Binding
+
     private val viewModels: HomeWork15ViewModel by viewModel()
 //        HomeWork15ViewModelFactory((application as MySuperApp).messageRepository)
 //    }

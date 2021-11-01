@@ -49,6 +49,22 @@
             android:hint="Password" />
     </com.google.android.material.textfield.TextInputLayout>
 
+    <ImageView
+        android:id="@+id/iv_r"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:layout_marginTop="420dp"
+        android:layout_marginHorizontal="200dp"
+        android:background="@drawable/ic_baseline_chat_bubble_outline_24"/>
+
+    <androidx.appcompat.widget.SwitchCompat
+        android:id="@+id/ASwitch"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="end"
+        app:switchPadding="8dp"
+       android:layout_marginVertical="150dp" />
+
     <com.google.android.material.button.MaterialButton
         android:id="@+id/b_cliсk"
         style="@style/Widget.MaterialComponents.Button.OutlinedButton"
@@ -61,7 +77,7 @@
 
     <ImageView
         android:id="@+id/iv_picture"
-        android:layout_width="match_parent"
-        android:layout_height="150dp"
+        android:layout_width="371dp"
+        android:layout_height="142dp"
         android:layout_margin="16dp" />
 </FrameLayout>

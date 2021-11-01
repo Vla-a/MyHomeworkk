@@ -11,7 +11,8 @@
         android:layout_height="0dp"
         android:gravity="center"
         android:textColor="@color/red"
-        app:layout_constraintBottom_toBottomOf="@+id/iv_photo"
+
+
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         tools:text="Marka" />
@@ -32,8 +33,7 @@
         android:id="@+id/iv_photo"
         android:layout_width="100dp"
         android:layout_height="50dp"
-        android:layout_marginStart="16dp"
         android:backgroundTint="@color/braun"
-        app:layout_constraintStart_toEndOf="@+id/tv_kod"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv_marka" />
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -11,6 +11,8 @@
         android:id="@+id/calendarView"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
+        android:datePickerMode="spinner"
+        android:calendarViewShown="false"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/timePicker" />
@@ -50,5 +52,48 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/btn_st" />
+
+    <androidx.fragment.app.FragmentContainerView
+        android:id="@+id/cr_fragment"
+        android:layout_width="200dp"
+        android:layout_height="200dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/calendarView" />
+
+    <RadioGroup
+        android:id="@+id/activity_main_answers"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/calendarView">
+        tools:layout_editor_absoluteX="122dp"
+        tools:layout_editor_absoluteY="583dp"
+
+        <RadioButton
+            android:id="@+id/activity_main_onclicklistener_answer1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="string/answer1" />
+
+        <RadioButton
+            android:id="@+id/activity_main_onclicklistener_answer2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="string/answer2" />
+
+        <RadioButton
+            android:id="@+id/activity_main_onclicklistener_answer3"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="string/answer3" />
+
+
+    </RadioGroup>
+
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>

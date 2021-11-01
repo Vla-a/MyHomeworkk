@@ -4,7 +4,8 @@
     package="com.example.myhomework">
 
     <uses-permission android:name="android.permission.INTERNET" />
-
+// для фото галереи
+    <uses-permission android:name="android.permission.READ_EXCTERNAL_STORAGE" />
     <application
         android:name=".MySuperApp"
         android:allowBackup="false"
@@ -35,6 +36,8 @@
         <activity android:name=".homework17.HomeWork17Activity" />
         <activity android:name=".alarmсlock.AlarmClockActivity" />
         <activity android:name=".homework20.WeatherLocationActivity" />
+        <activity android:name=".customview.CustomViewActivity" />
+        <activity android:name=".galeryiaphoto.PhotoActivity" />
 
         <receiver android:name=".homework20.WeatherWidget">
             <intent-filter>
@@ -53,7 +56,8 @@
 
         <receiver android:name=".alarmсlock.NotificationBroadcast"
             android:enabled="true"
-            android:exported="true"/>
+            android:exported="true">
+               </receiver>
     </application>
 
 </manifest>

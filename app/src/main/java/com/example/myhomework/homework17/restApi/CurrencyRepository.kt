@@ -15,7 +15,7 @@ class CurrencyRepository(
   ): MutableList<Currency> {
 
    return  withContext(Dispatchers.IO) {
-       currencyApi.getCurrencyList( limit, name).data.map {
+       currencyApi.getCurrencyList( limit, name).body()?.data?.map {
            Currency(id = it.id, name = it.name, sign = it.sign)
 
        }

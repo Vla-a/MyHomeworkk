@@ -1,19 +1,19 @@
 package com.example.myhomework.homework16
 
 
-import androidx.lifecycle.LiveData
-import androidx.lifecycle.ViewModel
-import androidx.lifecycle.asLiveData
-import androidx.lifecycle.viewModelScope
+import androidx.lifecycle.*
 import com.example.myhomework.homework16.database.MessageEntity
 import com.example.myhomework.homework16.database.MessageRepository
+import dagger.hilt.android.AndroidEntryPoint
+import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.launch
 import java.text.SimpleDateFormat
 import java.util.*
+import javax.inject.Inject
 
 
 class HomeWork15ViewModel(
-   private val messageRepository: MessageRepository
+     private val messageRepository: MessageRepository
 ) : ViewModel() {
 
 //    private val messageRepository: MessageRepository by inject()

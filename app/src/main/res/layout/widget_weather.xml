@@ -75,6 +75,17 @@
             android:layout_width="24dp"
             android:layout_height="24dp"
             android:layout_gravity="end"
-            android:src="@drawable/ic_baseline_add_24" />
+                                       />
+
+        <TextView
+            android:id="@+id/tv_max"
+            android:layout_width="match_parent"
+            android:layout_height="30dp"
+            android:gravity="center" />
+        <TextView
+            android:id="@+id/tv_min"
+            android:layout_width="match_parent"
+            android:layout_height="30dp"
+            android:gravity="center" />
     </LinearLayout>
 </LinearLayout>

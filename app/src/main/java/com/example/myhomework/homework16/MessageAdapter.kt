@@ -7,9 +7,10 @@ import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
 import com.example.myhomework.databinding.ItemMessageBinding
 import com.example.myhomework.homework17.data.Currency
+import javax.inject.Inject
 
 
-class MessageAdapter(
+class MessageAdapter (
     private val clickListener: (Message) -> Unit
 ) : ListAdapter<Message, MessageAdapter.MessageViewHolder>(DiffUtilItemCallback()) {
 

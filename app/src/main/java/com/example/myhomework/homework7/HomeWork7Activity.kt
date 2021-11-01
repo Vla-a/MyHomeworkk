@@ -8,32 +8,50 @@ import android.os.Bundle
 import android.view.View
 import androidx.appcompat.app.AppCompatActivity
 import com.bumptech.glide.Glide
+import com.example.myhomework.R
 import com.example.myhomework.databinding.ActivityHomework7Binding
+import com.example.myhomework.homework13.sharedprefs.SharedPrefsKeyss
+import com.example.myhomework.homework13.sharedprefs.SharedPrefsUtilss
 
 
 class HomeWork7Activity : AppCompatActivity() {
 
+    var count: Int = 0
     private lateinit var binding: ActivityHomework7Binding
     private var counter = 10
     private var rington: Ringtone? = null
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityHomework7Binding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        binding.bCliK?.setOnClickListener {
+        binding.ASwitch.isChecked = SharedPrefsUtilss.sharedPrefs.getBoolean(SharedPrefsKeyss.KEY, false)
 
-            //рингтон
+
+        //рингтон
+        val notificUri = RingtoneManager.getDefaultUri(RingtoneManager.TYPE_ALARM)
+        rington = RingtoneManager.getRingtone(this, notificUri)
+        if (rington == null) {
             val notificUri = RingtoneManager.getDefaultUri(RingtoneManager.TYPE_ALARM)
             rington = RingtoneManager.getRingtone(this, notificUri)
-            if (rington == null) {
-                val notificUri = RingtoneManager.getDefaultUri(RingtoneManager.TYPE_ALARM)
-                rington = RingtoneManager.getRingtone(this, notificUri)
+        }
+        binding.ivR.setOnClickListener {
+            when(count) {
+                0-> { count++
+                    rington?.play()
+                binding.ivR.setImageResource(R.drawable.ic_baseline_chat_bubble_24)}
+                1-> {
+                    count = 0
+                    rington?.stop()
+                    binding.ivR.setImageResource(R.drawable.ic_baseline_chat_bubble_outline_24)
+                }
             }
-            if (rington != null) {
-                rington?.play()
-            }
+        }
+
+
+        binding.bCliK?.setOnClickListener {
 
             binding.tvTextView?.text = (counter - 1).toString()
             counter--
@@ -61,6 +79,11 @@ class HomeWork7Activity : AppCompatActivity() {
             .into(binding.ivPicture)
     }
 
+    override fun onPause() {
+        super.onPause()
+        SharedPrefsUtilss.putString(SharedPrefsKeyss.KEY, binding.ASwitch.isChecked)
+    }
+
     override fun onSaveInstanceState(outState: Bundle) {
         outState.putInt(TIMER, counter)
         super.onSaveInstanceState(outState)
@@ -70,6 +93,7 @@ class HomeWork7Activity : AppCompatActivity() {
         super.onDestroy()
         rington?.stop()
     }
+
 
     companion object {
         const val LOGIN = "LOGIN"
